@@ -12,9 +12,12 @@
 		A8787AC721DF845C00E59C77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8787AC521DF845C00E59C77 /* Main.storyboard */; };
 		A8787AC921DF845F00E59C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8787AC821DF845F00E59C77 /* Assets.xcassets */; };
 		A8787ACC21DF845F00E59C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8787ACA21DF845F00E59C77 /* LaunchScreen.storyboard */; };
+		ECB51AFBE3A4C9301164A625 /* Pods_QuranAcademy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51396DBBEE9087E256C88C41 /* Pods_QuranAcademy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		51396DBBEE9087E256C88C41 /* Pods_QuranAcademy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranAcademy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		600C998A32E4979A7C2FF589 /* Pods-QuranAcademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranAcademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuranAcademy/Pods-QuranAcademy.release.xcconfig"; sourceTree = "<group>"; };
 		A8787ABE21DF845C00E59C77 /* QuranAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8787AC121DF845C00E59C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8787AC321DF845C00E59C77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		A8787AC821DF845F00E59C77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A8787ACB21DF845F00E59C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8787ACD21DF845F00E59C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF9DDD86D1739E6CF49D4342 /* Pods-QuranAcademy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranAcademy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuranAcademy/Pods-QuranAcademy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECB51AFBE3A4C9301164A625 /* Pods_QuranAcademy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40CEF8DE9DE85C793DEB4614 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BF9DDD86D1739E6CF49D4342 /* Pods-QuranAcademy.debug.xcconfig */,
+				600C998A32E4979A7C2FF589 /* Pods-QuranAcademy.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A8787AB521DF845C00E59C77 = {
 			isa = PBXGroup;
 			children = (
 				A8787AC021DF845C00E59C77 /* QuranAcademy */,
 				A8787ABF21DF845C00E59C77 /* Products */,
+				40CEF8DE9DE85C793DEB4614 /* Pods */,
+				F74B8D7F5BE3DC373759B319 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = QuranAcademy;
 			sourceTree = "<group>";
 		};
+		F74B8D7F5BE3DC373759B319 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51396DBBEE9087E256C88C41 /* Pods_QuranAcademy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8787AD021DF845F00E59C77 /* Build configuration list for PBXNativeTarget "QuranAcademy" */;
 			buildPhases = (
+				E8C897FA23523DD4572CEB81 /* [CP] Check Pods Manifest.lock */,
 				A8787ABA21DF845C00E59C77 /* Sources */,
 				A8787ABB21DF845C00E59C77 /* Frameworks */,
 				A8787ABC21DF845C00E59C77 /* Resources */,
+				A577803E197544EBA83C8537 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A577803E197544EBA83C8537 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-QuranAcademy/Pods-QuranAcademy-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwiftExt/RxSwiftExt.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwiftExt.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QuranAcademy/Pods-QuranAcademy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8C897FA23523DD4572CEB81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuranAcademy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A8787ABA21DF845C00E59C77 /* Sources */ = {
@@ -280,37 +351,35 @@
 		};
 		A8787AD121DF845F00E59C77 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF9DDD86D1739E6CF49D4342 /* Pods-QuranAcademy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4FFBNNC695;
 				INFOPLIST_FILE = QuranAcademy/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quranAcademy.app.QuranAcademy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A8787AD221DF845F00E59C77 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 600C998A32E4979A7C2FF589 /* Pods-QuranAcademy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4FFBNNC695;
 				INFOPLIST_FILE = QuranAcademy/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.quranAcademy.app.QuranAcademy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
