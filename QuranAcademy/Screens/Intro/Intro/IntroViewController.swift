@@ -65,14 +65,13 @@ extension IntroViewController {
     
     
     private func showProgressView(message: String) {
-        let loadingProgressVC = UIStoryboard.get(LoadingProgressViewController.self)
+        let loadingProgressVC = UIStoryboard.get(DownloadViewController.self)
         loadingProgressVC.modalPresentationStyle = .overCurrentContext
         loadingProgressVC.modalTransitionStyle = .crossDissolve
         loadingProgressVC.message = message
-        let viewModel = LoadingProgressViewModel()
+        let viewModel = DownloadViewModel()
         loadingProgressVC.viewModel = viewModel
-        
-        present(loadingProgressVC, animated: false)
+        present(loadingProgressVC, animated: true)
     }
     
 }
@@ -101,6 +100,7 @@ extension IntroViewController: UITableViewDataSource, UITableViewDelegate {
         DispatchQueue.main.async {
             self.showProgressView(message: language.name)
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -42,17 +42,13 @@ extension QuranEndpoint: TargetType {
     }
     
     var task: Task {
-        switch self {
-        case .getLanguages:
-            return .requestPlain
-        default: return .requestPlain
-        }
+        return .requestPlain
     }
     
     var headers: [String : String]? {
-        return ["InstallationId" : "\(installationID)",
+        return ["InstallationId" : "\(Preferences.installationID)",
             "Content-Type" : "application/json",
-            "Locale" : "ru"
+            "Locale" : "\(Preferences.code)"
         ]
     }
     

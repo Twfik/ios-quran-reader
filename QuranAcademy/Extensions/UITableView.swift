@@ -22,5 +22,15 @@ extension UITableView {
     
     func dequeue<T: UITableViewCell>(_: T.Type, indexPath: IndexPath) -> T {
         return dequeueReusableCell(withIdentifier: String(describing: T.self), for: indexPath) as! T // swiftlint:disable:this force_cast
-    }    
+    }
+    
+    // MARK: - Header & Footer
+    public func registerNibHeader<T: UIView>(_: T.Type) {
+        let nib = UINib(nibName: String(describing: T.self), bundle: nil)
+        register(nib, forHeaderFooterViewReuseIdentifier: String(describing: T.self))
+    }
+    
+    public func dequeueHeaderFooter<T: UIView>(_: T.Type) -> T {
+        return dequeueReusableHeaderFooterView(withIdentifier: String(describing: T.self)) as! T
+    }
 }

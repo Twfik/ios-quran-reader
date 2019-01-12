@@ -15,20 +15,31 @@ final class ContainerViewController: UIViewController {
     var splashVC: UIView?
 
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        guard let viewControllerToCheck = presentedViewController ?? children.last else {
+            return .default
+        }
+        return viewControllerToCheck.preferredStatusBarStyle
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setup()
+    }
+    
+    private func setup() {
         setSplashView()
-        
+        fetchLanguages()
+    }
+    
+    private func fetchLanguages() {
         viewModel.getLanguages().subscribe(onSuccess: { [weak self] (response) in
-            self?.showLanguagesView(response.languages)
-//            self?.splashVC?.removeFromSuperview()
-//            self?.splashVC = nil
-        }, onError: { (error) in
-            print(error)
+            self?.setIntroVC(response.languages)
+            self?.removeSplashView()
+            }, onError: { (error) in
+                print(error)
         }).disposed(by: bag)
-        
-        
     }
     
     private func setSplashView() {
@@ -37,13 +48,18 @@ final class ContainerViewController: UIViewController {
         self.view.addSubview(splashVC ?? UIView())
     }
     
-    private func showLanguagesView(_ languages: [LanguagesJSON]) {
-        let languagesView = UIStoryboard.get(LanguagesViewController.self)
-        let viewModel = LanguagesViewModel(languages: languages)
-        languagesView.viewModel = viewModel
-        languagesView.modalPresentationStyle = .overCurrentContext
-        languagesView.modalTransitionStyle = .crossDissolve
-        present(languagesView, animated: true)
+    private func removeSplashView() {
+        splashVC?.removeFromSuperview()
+        splashVC = nil
+    }
+    
+    private func setIntroVC(_ languages: [LanguagesJSON]) {
+        let introVC = UIStoryboard.get(IntroViewController.self)
+        let navi = UINavigationController(rootViewController: introVC)
+        let viewModel = IntroViewModel(languages: languages, provider: self.viewModel.provider)
+        introVC.viewModel = viewModel
+        set(navi, animated: true)
+        setNeedsStatusBarAppearanceUpdate()
     }
     
 }

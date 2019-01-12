@@ -23,6 +23,4 @@ struct ContainerViewModel {
             .map { try JSONDecoder().decode(Languages.self, from: $0.data) }
     }
     
-    
-    
 }

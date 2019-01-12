@@ -10,14 +10,7 @@ import Foundation
 
 let BASE_URL = "https://api.quranacademy.org/"
 
-var installationID: String {
-    if UserDefaults.standard.string(forKey: Keys.kInstallationID) == nil {
-        let uuid = UUID().uuidString
-        UserDefaults.standard.set(uuid, forKey: Keys.kInstallationID)
-    }
-    return UserDefaults.standard.string(forKey: Keys.kInstallationID) ?? ""
-}
-
 enum Keys {
     static let kInstallationID = "kInstallationID"
+    static let kLocaleCode = "kLocaleCode"
 }

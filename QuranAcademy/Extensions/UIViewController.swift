@@ -105,7 +105,7 @@ extension UIViewController {
         //        let damping: CGFloat = on ? 0.8 : 1
         //        let duration: Double = on ? 0.5 : 0.25
         //        let velocity: CGFloat = on ? 1 : 0
-        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: [], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 1, options: [], animations: {
             view.alpha = on ? 1 : 0
             view.transform = on ? .identity : CGAffineTransform(scaleX: scale, y: scale)
             if on == false {

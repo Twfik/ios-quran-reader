@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A8787AC221DF845C00E59C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8787AC121DF845C00E59C77 /* AppDelegate.swift */; };
-		A8787AC421DF845C00E59C77 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8787AC321DF845C00E59C77 /* LanguagesViewController.swift */; };
-		A8787AC721DF845C00E59C77 /* LanguagesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8787AC521DF845C00E59C77 /* LanguagesViewController.storyboard */; };
+		A8787AC421DF845C00E59C77 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8787AC321DF845C00E59C77 /* IntroViewController.swift */; };
+		A8787AC721DF845C00E59C77 /* IntroViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8787AC521DF845C00E59C77 /* IntroViewController.storyboard */; };
 		A8787AC921DF845F00E59C77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8787AC821DF845F00E59C77 /* Assets.xcassets */; };
-		A8787ACC21DF845F00E59C77 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8787ACA21DF845F00E59C77 /* LaunchScreen.storyboard */; };
 		A8787AD821DFCCB800E59C77 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8787AD721DFCCB700E59C77 /* Constants.swift */; };
 		A89CB8DF21DFE08500FEB466 /* QuranEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB8DE21DFE08500FEB466 /* QuranEndpoint.swift */; };
 		A89CB8E521DFE59D00FEB466 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB8E421DFE59D00FEB466 /* ContainerViewController.swift */; };
@@ -24,11 +23,14 @@
 		A89CB8F621DFEB4800FEB466 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB8F521DFEB4800FEB466 /* UIView.swift */; };
 		A89CB8F821DFEF8800FEB466 /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A89CB8F721DFEF8800FEB466 /* SplashView.xib */; };
 		A89CB8FA21DFEFED00FEB466 /* ContainerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB8F921DFEFED00FEB466 /* ContainerViewModel.swift */; };
-		A89CB8FD21DFF2C900FEB466 /* LanguagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB8FC21DFF2C900FEB466 /* LanguagesViewModel.swift */; };
+		A89CB8FD21DFF2C900FEB466 /* IntroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB8FC21DFF2C900FEB466 /* IntroViewModel.swift */; };
 		A89CB8FF21DFF40300FEB466 /* NSObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB8FE21DFF40300FEB466 /* NSObject+Rx.swift */; };
 		A89CB90121DFF5B600FEB466 /* LanguagesJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB90021DFF5B600FEB466 /* LanguagesJSON.swift */; };
 		A89CB90321DFFDEE00FEB466 /* Data+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB90221DFFDEE00FEB466 /* Data+extension.swift */; };
-		A89CB90621E0084E00FEB466 /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB90521E0084E00FEB466 /* LanguageCell.swift */; };
+		A8EA5F4E21E6967500474F17 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F4D21E6967500474F17 /* Preferences.swift */; };
+		A8EA5F6221E91DE400474F17 /* DownloadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F6121E91DE400474F17 /* DownloadViewController.storyboard */; };
+		A8EA5F6421E91DFA00474F17 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F6321E91DFA00474F17 /* DownloadViewController.swift */; };
+		A8EA5F6621E92FA400474F17 /* DownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F6521E92FA400474F17 /* DownloadViewModel.swift */; };
 		ECB51AFBE3A4C9301164A625 /* Pods_QuranAcademy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51396DBBEE9087E256C88C41 /* Pods_QuranAcademy.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,10 +39,9 @@
 		600C998A32E4979A7C2FF589 /* Pods-QuranAcademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranAcademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuranAcademy/Pods-QuranAcademy.release.xcconfig"; sourceTree = "<group>"; };
 		A8787ABE21DF845C00E59C77 /* QuranAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8787AC121DF845C00E59C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A8787AC321DF845C00E59C77 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
-		A8787AC621DF845C00E59C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LanguagesViewController.storyboard; sourceTree = "<group>"; };
+		A8787AC321DF845C00E59C77 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		A8787AC621DF845C00E59C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/IntroViewController.storyboard; sourceTree = "<group>"; };
 		A8787AC821DF845F00E59C77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A8787ACB21DF845F00E59C77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A8787ACD21DF845F00E59C77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8787AD721DFCCB700E59C77 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A89CB8DE21DFE08500FEB466 /* QuranEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuranEndpoint.swift; sourceTree = "<group>"; };
@@ -54,11 +55,14 @@
 		A89CB8F521DFEB4800FEB466 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A89CB8F721DFEF8800FEB466 /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		A89CB8F921DFEFED00FEB466 /* ContainerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewModel.swift; sourceTree = "<group>"; };
-		A89CB8FC21DFF2C900FEB466 /* LanguagesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewModel.swift; sourceTree = "<group>"; };
+		A89CB8FC21DFF2C900FEB466 /* IntroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewModel.swift; sourceTree = "<group>"; };
 		A89CB8FE21DFF40300FEB466 /* NSObject+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Rx.swift"; sourceTree = "<group>"; };
 		A89CB90021DFF5B600FEB466 /* LanguagesJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesJSON.swift; sourceTree = "<group>"; };
 		A89CB90221DFFDEE00FEB466 /* Data+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+extension.swift"; sourceTree = "<group>"; };
-		A89CB90521E0084E00FEB466 /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
+		A8EA5F4D21E6967500474F17 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		A8EA5F6121E91DE400474F17 /* DownloadViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DownloadViewController.storyboard; sourceTree = "<group>"; };
+		A8EA5F6321E91DFA00474F17 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+		A8EA5F6521E92FA400474F17 /* DownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewModel.swift; sourceTree = "<group>"; };
 		BF9DDD86D1739E6CF49D4342 /* Pods-QuranAcademy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranAcademy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuranAcademy/Pods-QuranAcademy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				A8787AD721DFCCB700E59C77 /* Constants.swift */,
+				A8EA5F4D21E6967500474F17 /* Preferences.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -135,7 +140,6 @@
 		A8787AD921DFCEA200E59C77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				A8787ACA21DF845F00E59C77 /* LaunchScreen.storyboard */,
 				A8787ACD21DF845F00E59C77 /* Info.plist */,
 				A89CB8F721DFEF8800FEB466 /* SplashView.xib */,
 			);
@@ -146,7 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				A89CB8E321DFE58A00FEB466 /* Container */,
-				A89CB8FB21DFF2A300FEB466 /* LanguagesList */,
+				A8EA5F6921E9459F00474F17 /* Intro */,
+				A8EA5F5C21E8F17000474F17 /* Download */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -176,23 +181,25 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A89CB8FB21DFF2A300FEB466 /* LanguagesList */ = {
+		A8EA5F5C21E8F17000474F17 /* Download */ = {
 			isa = PBXGroup;
 			children = (
-				A89CB90421E0083B00FEB466 /* Cell */,
-				A89CB8FC21DFF2C900FEB466 /* LanguagesViewModel.swift */,
-				A8787AC321DF845C00E59C77 /* LanguagesViewController.swift */,
-				A8787AC521DF845C00E59C77 /* LanguagesViewController.storyboard */,
+				A8EA5F6121E91DE400474F17 /* DownloadViewController.storyboard */,
+				A8EA5F6321E91DFA00474F17 /* DownloadViewController.swift */,
+				A8EA5F6521E92FA400474F17 /* DownloadViewModel.swift */,
 			);
-			path = LanguagesList;
+			path = Download;
 			sourceTree = "<group>";
 		};
-		A89CB90421E0083B00FEB466 /* Cell */ = {
+		A8EA5F6921E9459F00474F17 /* Intro */ = {
 			isa = PBXGroup;
 			children = (
-				A89CB90521E0084E00FEB466 /* LanguageCell.swift */,
+				A89CB8FC21DFF2C900FEB466 /* IntroViewModel.swift */,
+				A8787AC321DF845C00E59C77 /* IntroViewController.swift */,
+				A8787AC521DF845C00E59C77 /* IntroViewController.storyboard */,
 			);
-			path = Cell;
+			name = Intro;
+			path = Intro/Intro;
 			sourceTree = "<group>";
 		};
 		F74B8D7F5BE3DC373759B319 /* Frameworks */ = {
@@ -263,10 +270,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8787ACC21DF845F00E59C77 /* LaunchScreen.storyboard in Resources */,
 				A89CB8F821DFEF8800FEB466 /* SplashView.xib in Resources */,
+				A8EA5F6221E91DE400474F17 /* DownloadViewController.storyboard in Resources */,
 				A8787AC921DF845F00E59C77 /* Assets.xcassets in Resources */,
-				A8787AC721DF845C00E59C77 /* LanguagesViewController.storyboard in Resources */,
+				A8787AC721DF845C00E59C77 /* IntroViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,15 +338,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8787AD821DFCCB800E59C77 /* Constants.swift in Sources */,
-				A8787AC421DF845C00E59C77 /* LanguagesViewController.swift in Sources */,
+				A8787AC421DF845C00E59C77 /* IntroViewController.swift in Sources */,
 				A89CB90321DFFDEE00FEB466 /* Data+extension.swift in Sources */,
-				A89CB8FD21DFF2C900FEB466 /* LanguagesViewModel.swift in Sources */,
+				A89CB8FD21DFF2C900FEB466 /* IntroViewModel.swift in Sources */,
 				A89CB8E521DFE59D00FEB466 /* ContainerViewController.swift in Sources */,
 				A89CB8F421DFEAD400FEB466 /* UIViewController.swift in Sources */,
 				A89CB8F621DFEB4800FEB466 /* UIView.swift in Sources */,
 				A89CB8F121DFEAAF00FEB466 /* UIButton + TouchArea.swift in Sources */,
+				A8EA5F4E21E6967500474F17 /* Preferences.swift in Sources */,
 				A89CB8EF21DFEAAF00FEB466 /* UIStoryboard.swift in Sources */,
-				A89CB90621E0084E00FEB466 /* LanguageCell.swift in Sources */,
+				A8EA5F6421E91DFA00474F17 /* DownloadViewController.swift in Sources */,
 				A89CB8FA21DFEFED00FEB466 /* ContainerViewModel.swift in Sources */,
 				A89CB8DF21DFE08500FEB466 /* QuranEndpoint.swift in Sources */,
 				A8787AC221DF845C00E59C77 /* AppDelegate.swift in Sources */,
@@ -347,6 +355,7 @@
 				A89CB8F221DFEAAF00FEB466 /* UICollectionView.swift in Sources */,
 				A89CB8F021DFEAAF00FEB466 /* UINavigationController+StatusBarStyle.swift in Sources */,
 				A89CB8FF21DFF40300FEB466 /* NSObject+Rx.swift in Sources */,
+				A8EA5F6621E92FA400474F17 /* DownloadViewModel.swift in Sources */,
 				A89CB90121DFF5B600FEB466 /* LanguagesJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,20 +363,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A8787AC521DF845C00E59C77 /* LanguagesViewController.storyboard */ = {
+		A8787AC521DF845C00E59C77 /* IntroViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A8787AC621DF845C00E59C77 /* Base */,
 			);
-			name = LanguagesViewController.storyboard;
-			sourceTree = "<group>";
-		};
-		A8787ACA21DF845F00E59C77 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A8787ACB21DF845F00E59C77 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = IntroViewController.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
