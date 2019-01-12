@@ -6,14 +6,17 @@
 //  Copyright © 2019 Ayub. All rights reserved.
 //
 
-import Foundation
+import Moya
 
-struct LanguagesViewModel {
+struct IntroViewModel {
     
     var languages: [LanguagesJSON]
+    var provider: MoyaProvider<QuranEndpoint>
     
-    init(languages: [LanguagesJSON]) {
+    init(languages: [LanguagesJSON], provider: MoyaProvider<QuranEndpoint>) {
         self.languages = languages
+        self.provider = provider
     }
+    
     
 }
