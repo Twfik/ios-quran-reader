@@ -15,7 +15,13 @@ final class DownloadViewModel {
     
     var provider = MoyaProvider<QuranEndpoint>()
     var progress = BehaviorRelay(value: Float())
+
     var request: Alamofire.Request?
+    let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        let fileURL = documentsURL.appendingPathComponent("quranDB.db")
+        return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+    }
     
     /// Возвращает адрес файла БД с текстами Корана
     func getQuranDatabaseURL() -> Single<URL?> {
@@ -33,15 +39,19 @@ final class DownloadViewModel {
     
     /// Возвращает файл БД с текстами Корана
     func getQuranDatabase(with url: URL) {
-       request = download(url)
+       request = download(url, to: destination)
             .downloadProgress { [weak self] (progress) in
-                print(progress.fractionCompleted)
                 let progress = Float(progress.fractionCompleted)
                 self?.progress.accept(progress)
-                print(self?.progress.value ?? 0)
-                print(progress)
             }
             .responseData { (data) in
+                switch data.result {
+                case .success(let data):
+                    print(data)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+                
                 print(data.description)
         }
     }

@@ -9,10 +9,10 @@
 import Foundation
 
 struct Languages: Decodable {
-    let languages: [LanguagesJSON]
+    let languages: [Language]
 }
 
-struct LanguagesJSON: Decodable {
+struct Language: Decodable {
     let id: Int
     let code: String
     let name: String
@@ -24,6 +24,5 @@ struct LanguagesJSON: Decodable {
         case name
         case is_rtl = "is_rtl"
     }
-
     
-    }
+}

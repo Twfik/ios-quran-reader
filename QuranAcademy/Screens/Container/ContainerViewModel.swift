@@ -22,5 +22,4 @@ struct ContainerViewModel {
             .retry(3)
             .map { try JSONDecoder().decode(Languages.self, from: $0.data) }
     }
-    
 }

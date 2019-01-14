@@ -53,7 +53,7 @@ final class ContainerViewController: UIViewController {
         splashVC = nil
     }
     
-    private func setIntroVC(_ languages: [LanguagesJSON]) {
+    private func setIntroVC(_ languages: [Language]) {
         let introVC = UIStoryboard.get(IntroViewController.self)
         let navi = UINavigationController(rootViewController: introVC)
         let viewModel = IntroViewModel(languages: languages, provider: self.viewModel.provider)

@@ -13,10 +13,17 @@ class IntroViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func nextButtonTapped(_ sender: UIBarButtonItem) {
+        let surasVC = UIStoryboard.get(SurasViewController.self)
+        surasVC.suras = viewModel.suras
+        push(surasVC, animated: true)
+    }
     var viewModel: IntroViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationController?.navigationBar.shadowImage = UIImage()
         setup()
     }
     
@@ -74,6 +81,14 @@ extension IntroViewController {
         present(loadingProgressVC, animated: true)
     }
     
+    private func fetchSuras() {
+        viewModel.getSuras()
+            .subscribe(onNext: { [weak self] (suras) in
+                self?.viewModel.suras = suras.sura
+            }).disposed(by: bag)
+    }
+
+    
 }
 
 extension IntroViewController: UITableViewDataSource, UITableViewDelegate {
@@ -98,7 +113,8 @@ extension IntroViewController: UITableViewDataSource, UITableViewDelegate {
         let code = language.code
         UserDefaults.standard.set(code, forKey: Keys.kLocaleCode)
         DispatchQueue.main.async {
-            self.showProgressView(message: language.name)
+//            self.showProgressView(message: language.name)
+            self.fetchSuras()
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
