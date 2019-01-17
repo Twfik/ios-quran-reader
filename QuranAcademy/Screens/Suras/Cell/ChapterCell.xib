@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" rowHeight="112" id="J3A-K6-Jft" customClass="ChapterCell" customModule="QuranAcademy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J3A-K6-Jft" id="PW3-g0-D4z">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i8S-wX-WZF">
+                        <rect key="frame" x="111" y="16" width="238" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Открывающая" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZm-rS-YU5">
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الأنعام" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kwg-qm-2cl">
+                                <rect key="frame" x="0.0" y="30" width="238" height="23.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="256" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpL-S9-wkh">
+                                <rect key="frame" x="0.0" y="58.5" width="238" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hA-VJ-niD" customClass="NeverClearView" customModule="QuranAcademy" customModuleProvider="target">
+                        <rect key="frame" x="26" y="21" width="70" height="70"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G72-jc-y7M" customClass="NeverClearView" customModule="QuranAcademy" customModuleProvider="target">
+                                <rect key="frame" x="30" y="30" width="40" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g66-Mo-x8e">
+                                        <rect key="frame" x="16" y="10" width="8" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="g66-Mo-x8e" firstAttribute="centerX" secondItem="G72-jc-y7M" secondAttribute="centerX" id="47J-NR-crZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="R2P-s0-BiO"/>
+                                    <constraint firstAttribute="width" constant="40" id="c3Y-yy-Qul"/>
+                                    <constraint firstItem="g66-Mo-x8e" firstAttribute="centerY" secondItem="G72-jc-y7M" secondAttribute="centerY" id="hEt-hI-NIz"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18823529410000001" green="0.40000000000000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="G72-jc-y7M" secondAttribute="bottom" id="Zpy-6f-5Cf"/>
+                            <constraint firstAttribute="width" constant="70" id="aGm-VZ-pi3"/>
+                            <constraint firstAttribute="trailing" secondItem="G72-jc-y7M" secondAttribute="trailing" id="gyh-Ox-cCJ"/>
+                            <constraint firstAttribute="height" constant="70" id="pJF-97-tu9"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="i8S-wX-WZF" secondAttribute="trailing" constant="10" id="IxY-2l-kRZ"/>
+                    <constraint firstItem="9hA-VJ-niD" firstAttribute="top" secondItem="PW3-g0-D4z" secondAttribute="topMargin" constant="10" id="SVz-1C-lcz"/>
+                    <constraint firstItem="9hA-VJ-niD" firstAttribute="leading" secondItem="PW3-g0-D4z" secondAttribute="leadingMargin" constant="10" id="ee9-1m-uvm"/>
+                    <constraint firstItem="i8S-wX-WZF" firstAttribute="leading" secondItem="9hA-VJ-niD" secondAttribute="trailing" constant="15" id="isW-L4-94E"/>
+                    <constraint firstItem="i8S-wX-WZF" firstAttribute="top" secondItem="PW3-g0-D4z" secondAttribute="topMargin" constant="5" id="la8-eG-1Z8"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="9hA-VJ-niD" secondAttribute="bottom" constant="10" id="ofv-Gz-eMo"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="i8S-wX-WZF" secondAttribute="bottom" constant="5" id="qpc-9B-QtI"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="ayahCountLabel" destination="hpL-S9-wkh" id="vRt-rQ-c0C"/>
+                <outlet property="containerView" destination="9hA-VJ-niD" id="TE8-Al-iak"/>
+                <outlet property="suraArLabel" destination="Kwg-qm-2cl" id="f8G-Ru-UJh"/>
+                <outlet property="suraNumberContainerView" destination="G72-jc-y7M" id="SZ8-la-Iyi"/>
+                <outlet property="suraNumberLabel" destination="g66-Mo-x8e" id="m6b-jk-uJ6"/>
+                <outlet property="suraTranslationLabel" destination="UZm-rS-YU5" id="d3j-Of-Dmg"/>
+            </connections>
+            <point key="canvasLocation" x="29.600000000000001" y="-48.575712143928037"/>
+        </tableViewCell>
+    </objects>
+</document>

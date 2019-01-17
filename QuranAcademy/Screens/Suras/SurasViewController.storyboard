@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Suras View Controller-->
+        <scene sceneID="pep-Um-Tn9">
+            <objects>
+                <viewController storyboardIdentifier="SurasViewController" id="7Zk-f3-tuK" customClass="SurasViewController" customModule="QuranAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DY7-k5-jbT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fJ9-C2-IYj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Zk-f3-tuK" id="ec2-iN-i3f"/>
+                                    <outlet property="delegate" destination="7Zk-f3-tuK" id="pVu-FP-BHb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fJ9-C2-IYj" firstAttribute="top" secondItem="5X8-aF-goZ" secondAttribute="top" id="0oa-U9-HbR"/>
+                            <constraint firstItem="fJ9-C2-IYj" firstAttribute="trailing" secondItem="5X8-aF-goZ" secondAttribute="trailing" id="EPj-T0-iCb"/>
+                            <constraint firstItem="fJ9-C2-IYj" firstAttribute="bottom" secondItem="5X8-aF-goZ" secondAttribute="bottom" id="Ogo-1x-odY"/>
+                            <constraint firstItem="fJ9-C2-IYj" firstAttribute="leading" secondItem="5X8-aF-goZ" secondAttribute="leading" id="dda-LC-IAr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5X8-aF-goZ"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fJ9-C2-IYj" id="19M-nU-GXI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0s-Ek-h5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="97.601199400299862"/>
+        </scene>
+    </scenes>
+</document>
