@@ -84,11 +84,12 @@ extension IntroViewController {
     private func fetchSuras() {
         viewModel.getSuras()
             .subscribe(onNext: { [weak self] (suras) in
-                self?.viewModel.suras = suras.sura
+                self?.viewModel.suras = suras.suras
+                }, onError: { (error) in
+                    print(error)
             }).disposed(by: bag)
     }
 
-    
 }
 
 extension IntroViewController: UITableViewDataSource, UITableViewDelegate {
@@ -113,7 +114,6 @@ extension IntroViewController: UITableViewDataSource, UITableViewDelegate {
         let code = language.code
         UserDefaults.standard.set(code, forKey: Keys.kLocaleCode)
         DispatchQueue.main.async {
-//            self.showProgressView(message: language.name)
             self.fetchSuras()
         }
         tableView.deselectRow(at: indexPath, animated: true)

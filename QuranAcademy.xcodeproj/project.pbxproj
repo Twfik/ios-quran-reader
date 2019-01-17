@@ -28,6 +28,8 @@
 		A89CB8FF21DFF40300FEB466 /* NSObject+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB8FE21DFF40300FEB466 /* NSObject+Rx.swift */; };
 		A89CB90121DFF5B600FEB466 /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB90021DFF5B600FEB466 /* Languages.swift */; };
 		A89CB90321DFFDEE00FEB466 /* Data+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89CB90221DFFDEE00FEB466 /* Data+extension.swift */; };
+		A8B2E17621F0C00F0058ED6A /* Ayats.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E17521F0C00F0058ED6A /* Ayats.swift */; };
+		A8B2E17821F0C02C0058ED6A /* Words.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E17721F0C02C0058ED6A /* Words.swift */; };
 		A8EA5F4E21E6967500474F17 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F4D21E6967500474F17 /* Preferences.swift */; };
 		A8EA5F6221E91DE400474F17 /* DownloadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F6121E91DE400474F17 /* DownloadViewController.storyboard */; };
 		A8EA5F6421E91DFA00474F17 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F6321E91DFA00474F17 /* DownloadViewController.swift */; };
@@ -75,6 +77,8 @@
 		A89CB8FE21DFF40300FEB466 /* NSObject+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Rx.swift"; sourceTree = "<group>"; };
 		A89CB90021DFF5B600FEB466 /* Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		A89CB90221DFFDEE00FEB466 /* Data+extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+extension.swift"; sourceTree = "<group>"; };
+		A8B2E17521F0C00F0058ED6A /* Ayats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ayats.swift; sourceTree = "<group>"; };
+		A8B2E17721F0C02C0058ED6A /* Words.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Words.swift; sourceTree = "<group>"; };
 		A8EA5F4D21E6967500474F17 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		A8EA5F6121E91DE400474F17 /* DownloadViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DownloadViewController.storyboard; sourceTree = "<group>"; };
 		A8EA5F6321E91DFA00474F17 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
@@ -181,10 +185,10 @@
 		A89CB8E221DFE34100FEB466 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				A8EA5F7921EBAC3600474F17 /* SuraDetail */,
-				A8EA5F6A21EA35D600474F17 /* Suras */,
 				A89CB8E321DFE58A00FEB466 /* Container */,
 				A8EA5F6921E9459F00474F17 /* Intro */,
+				A8EA5F7921EBAC3600474F17 /* SuraDetail */,
+				A8EA5F6A21EA35D600474F17 /* Suras */,
 				A8EA5F5C21E8F17000474F17 /* Download */,
 			);
 			path = Screens;
@@ -254,6 +258,8 @@
 				A8EA5F7121EA3E1C00474F17 /* Sura.swift */,
 				A8EA5F8A21EC821B00474F17 /* Translation.swift */,
 				A8EA5F8E21EC858B00474F17 /* WordTranslation.swift */,
+				A8B2E17521F0C00F0058ED6A /* Ayats.swift */,
+				A8B2E17721F0C02C0058ED6A /* Words.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -456,12 +462,14 @@
 				A89CB8EE21DFEAAF00FEB466 /* UITableView.swift in Sources */,
 				A8EA5F8221EBB15D00474F17 /* QuranDB.swift in Sources */,
 				A89CB8F221DFEAAF00FEB466 /* UICollectionView.swift in Sources */,
+				A8B2E17821F0C02C0058ED6A /* Words.swift in Sources */,
 				A8EA5F8721EC032E00474F17 /* AyahCell.swift in Sources */,
 				A8EA5F7F21EBAC7700474F17 /* SuraDetailViewModel.swift in Sources */,
 				A89CB8F021DFEAAF00FEB466 /* UINavigationController+StatusBarStyle.swift in Sources */,
 				A89CB8FF21DFF40300FEB466 /* NSObject+Rx.swift in Sources */,
 				A8EA5F6621E92FA400474F17 /* DownloadViewModel.swift in Sources */,
 				A82C8BD321ED19D90093212B /* Observable+Decodable.swift in Sources */,
+				A8B2E17621F0C00F0058ED6A /* Ayats.swift in Sources */,
 				A8EA5F7221EA3E1C00474F17 /* Sura.swift in Sources */,
 				A8EA5F7B21EBAC4E00474F17 /* SuraDetailViewController.swift in Sources */,
 				A89CB90121DFF5B600FEB466 /* Languages.swift in Sources */,
@@ -603,18 +611,19 @@
 			baseConfigurationReference = BF9DDD86D1739E6CF49D4342 /* Pods-QuranAcademy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4FFBNNC695;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QHVX42PQ34;
 				INFOPLIST_FILE = "$(SRCROOT)/QuranAcademy/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quranAcademy.app.QuranAcademy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quranacademy.quranapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "com.quranacademy.quranapp AppStore";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -625,18 +634,19 @@
 			baseConfigurationReference = 600C998A32E4979A7C2FF589 /* Pods-QuranAcademy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4FFBNNC695;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QHVX42PQ34;
 				INFOPLIST_FILE = "$(SRCROOT)/QuranAcademy/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.quranAcademy.app.QuranAcademy;
+				PRODUCT_BUNDLE_IDENTIFIER = com.quranacademy.quranapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "com.quranacademy.quranapp AppStore";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

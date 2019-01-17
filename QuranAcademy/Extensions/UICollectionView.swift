@@ -38,37 +38,6 @@ extension UICollectionView {
         self.backgroundView = textLabel
     }
     
-    func setEmptyData(_ message: String, image: String) {
-        let view = UIView()
-        view.frame = self.frame
-        
-        let backgroundLabel: UILabel = {
-            let height = UIScreen.main.bounds.height
-            let width = UIScreen.main.bounds.width
-            let label = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width - 10, height: 50))
-            label.center = CGPoint(x: width / 2, y: height / 2)
-            label.text = message
-            label.textColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-            label.numberOfLines = 0
-            label.textAlignment = .center
-            label.font = UIFont(name: "Avenir-Light", size: 17)
-            return label
-        }()
-        
-        let image = UIImage(named: image)
-        let backgroundImageView: UIImageView = {
-            let imageView = UIImageView(frame: CGRect(x: (view.frame.width / 2) - 50, y: view.frame.height / 2 - 70, width: 100, height: 100))
-            imageView.image = image
-            imageView.contentMode = .scaleAspectFit
-            return imageView
-        }()
-        
-        view.addSubview(backgroundImageView)
-        view.addSubview(backgroundLabel)
-
-        self.backgroundView = view
-    }
-    
     func clearBackgroundView() {
         self.backgroundView = nil
     }

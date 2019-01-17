@@ -10,14 +10,13 @@ import UIKit
 
 extension UIViewController {
     
-    func fixScrollViewInsets() {
+    func disableAutomaticScrollViewInsets() {
         if #available(iOS 11, *) {} else {
             self.automaticallyAdjustsScrollViewInsets = false
         }
 
     }
 
-        
     func add(_ child: UIViewController, animated: Bool = false) {
         child.willMove(toParent: self)
         addChild(child)
@@ -33,9 +32,7 @@ extension UIViewController {
             child.view.alpha = 1
         }
     }
-    
-    
-    
+
      func delayTappingOn(_ sender: UIButton) {
         sender.isEnabled = !sender.isEnabled
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
@@ -43,7 +40,6 @@ extension UIViewController {
         }
     }
 
-    
     func remove(_ child: UIViewController, animated: Bool = false) {
         UIView.animate(withDuration: animated ? 0.25 : 0, animations: {
             child.view.alpha = 0
