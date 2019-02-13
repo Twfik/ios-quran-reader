@@ -13,33 +13,22 @@ import Moya
 
 final class DownloadViewModel {
     
-    var provider = MoyaProvider<QuranEndpoint>()
+    private var provider = MoyaProvider<QuranEndpoint>()
+    private var request: Alamofire.Request?
     var progress = BehaviorRelay(value: Float())
-
-    var request: Alamofire.Request?
-    let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+    var fileName = ""
+    var url = ""
+    
+    
+    
+    func downloadFile(with url: URL,_ fileName: String) {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileURL = documentsURL.appendingPathComponent("quranDB.db")
-        return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
-    }
-    
-    /// Возвращает адрес файла БД с текстами Корана
-    func getQuranDatabaseURL() -> Single<URL?> {
-        return provider.rx
-            .request(.getQuranTextURL)
-            .retry(5)
-            .map { response in
-              guard let jsonObject = try? JSONSerialization.jsonObject(with: response.data, options: []),
-                var dict = jsonObject as? Dictionary<String?, String>,
-                let stringURL = dict["file_url"],
-                let url = URL(string: stringURL) else { return nil }
-                return url
+        let fileURL = documentsURL.appendingPathComponent(fileName)
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
         }
-    }
-    
-    /// Возвращает файл БД с текстами Корана
-    func getQuranDatabase(with url: URL) {
-       request = download(url, to: destination)
+        
+        request = download(url, to: destination)
             .downloadProgress { [weak self] (progress) in
                 let progress = Float(progress.fractionCompleted)
                 self?.progress.accept(progress)
@@ -59,5 +48,5 @@ final class DownloadViewModel {
     func cancelRequest() {
         request?.cancel()
     }
-
+    
 }

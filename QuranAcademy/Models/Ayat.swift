@@ -6,14 +6,8 @@
 //  Copyright © 2019 Ayub. All rights reserved.
 //
 
-class Ayats {
+class Ayat: Codable {
     let sura: Int
     let ayat: Int
     let text: String
-    
-    init(sura: Int, ayat: Int, text: String) {
-        self.sura = sura
-        self.ayat = ayat
-        self.text = text
-    }
 }

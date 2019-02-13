@@ -17,7 +17,7 @@ final class ContainerViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         guard let viewControllerToCheck = presentedViewController ?? children.last else {
-            return .default
+            return .lightContent
         }
         return viewControllerToCheck.preferredStatusBarStyle
     }
@@ -30,17 +30,38 @@ final class ContainerViewController: UIViewController {
     
     private func setup() {
         setSplashView()
-        fetchLanguages()
+        setNeedViewController()
     }
     
-    private func fetchLanguages() {
-        viewModel.getLanguages()
-            .subscribe(onSuccess: { [weak self] (response) in
-                self?.setIntroVC(response.languages)
-                self?.removeSplashView()
-                }, onError: { (error) in
-                    print(error)
+    private func setNeedViewController() {
+        let isСonfigured = UserDefaults.standard.bool(forKey: Keys.isСonfigured)
+        isСonfigured ? setTabbar() : beginSetuping()
+    }
+    
+    private func fetchIntroItems() {
+        viewModel.getIntroItems()
+            .subscribe(onNext: { [weak self] (languages, translations, wordTranslations, suras) in
+                self?.viewModel.save(languages,
+                                      translations,
+                                      wordTranslations,
+                                      suras)
+                
+                self?.setWelcomeVC()
+//                self?.removeSplashView()
+            }, onError: { (error) in
+                print(error.localizedDescription)
             }).disposed(by: bag)
+    }
+    
+    private func beginSetuping() {
+        let db = SQLiteStorage(.list)
+        let languages: [Language] = db.objects(Language.self, table: Tables.language)
+        
+        if languages.isEmpty {
+            fetchIntroItems()
+        } else {
+            setWelcomeVC()
+        }
     }
     
     private func setSplashView() {
@@ -54,13 +75,19 @@ final class ContainerViewController: UIViewController {
         splashVC = nil
     }
     
-    private func setIntroVC(_ languages: [Language]) {
-        let introVC = UIStoryboard.get(IntroViewController.self)
-        let navi = UINavigationController(rootViewController: introVC)
-        let viewModel = IntroViewModel(languages: languages, provider: self.viewModel.provider)
-        introVC.viewModel = viewModel
-        set(navi, animated: true)
-        setNeedsStatusBarAppearanceUpdate()
+    private func setWelcomeVC() {
+        let welcomeVC = UIStoryboard.get(WelcomeViewController.self)
+        let navi = UINavigationController(rootViewController: welcomeVC)
+        UIView.animate(withDuration: 0.5) {
+            self.set(navi, animated: true)
+        }
     }
+    
+    private func setTabbar() {
+        let tabbar = UIStoryboard.get(MainTabBarController.self)
+        UserDefaults.standard.set(true, forKey: Keys.isСonfigured)
+        set(tabbar, animated: true)
+    }
+
     
 }

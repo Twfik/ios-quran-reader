@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yTl-E5-iD9">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Translations View Controller-->
+        <scene sceneID="bjf-UX-Qgf">
+            <objects>
+                <viewController storyboardIdentifier="TranslationsViewController" hidesBottomBarWhenPushed="YES" id="yTl-E5-iD9" customClass="TranslationsViewController" customModule="QuranAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P96-SO-K5a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6be-gY-DPa">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="yTl-E5-iD9" id="GUC-k3-Loe"/>
+                                    <outlet property="delegate" destination="yTl-E5-iD9" id="igE-rm-uvZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6be-gY-DPa" firstAttribute="leading" secondItem="epe-Tr-e0J" secondAttribute="leading" id="8TL-jc-KHc"/>
+                            <constraint firstItem="6be-gY-DPa" firstAttribute="top" secondItem="epe-Tr-e0J" secondAttribute="top" id="Xkl-9v-0MX"/>
+                            <constraint firstItem="epe-Tr-e0J" firstAttribute="trailing" secondItem="6be-gY-DPa" secondAttribute="trailing" id="iDj-bB-LAR"/>
+                            <constraint firstItem="epe-Tr-e0J" firstAttribute="bottom" secondItem="6be-gY-DPa" secondAttribute="bottom" id="qPf-iM-N3I"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="epe-Tr-e0J"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="6be-gY-DPa" id="NDW-pT-V65"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7YV-dD-NQv" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+</document>

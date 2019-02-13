@@ -18,7 +18,6 @@ final class DownloadViewController: UIViewController {
     
     var message = ""
     var viewModel: DownloadViewModel!
-//    var surasList: (([Suras]?) -> Void)?
     
     @IBAction func cancelButtonTapped(_ sender: UIButton) {
         viewModel.cancelRequest()
@@ -44,8 +43,13 @@ extension DownloadViewController {
     private func setup() {
         setupContainerAppear()
         setupLabels()
-        fetchQuranDatabaseURL()
         setupProgressView()
+        fetchDownloadFile()
+    }
+    
+    private func fetchDownloadFile() {
+        guard let url = URL(string: viewModel.url) else { return }
+        viewModel.downloadFile(with: url, viewModel.fileName)
     }
     
     private func setupContainerAppear() {
@@ -57,19 +61,6 @@ extension DownloadViewController {
         animate(view: containerView, on: false, scale: 0.85) {
             self.dismiss(animated: false)
         }
-    }
-    
-    private func fetchQuranDatabaseURL() {
-        viewModel.getQuranDatabaseURL()
-            .subscribe(onSuccess: { [weak self] (url) in
-                guard let url = url else { return }
-                self?.viewModel.getQuranDatabase(with: url)
-            }).disposed(by: bag)
-    }
-    
-    
-    private func setupSuras(suras: [Sura]) {
-        
     }
     
     private func setupProgressView() {

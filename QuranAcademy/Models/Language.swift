@@ -8,21 +8,19 @@
 
 import Foundation
 
-struct Languages: Decodable {
+struct LanguagesResponse: Codable {
+    
     let languages: [Language]
+    
+    init(languages: [Language]) {
+        self.languages = languages
+    }
 }
 
-struct Language: Decodable {
+struct Language: Codable {
+    
     let id: Int
     let code: String
     let name: String
-    let is_rtl: Bool
-    
-    enum CodingKeys : String, CodingKey {
-        case id
-        case code
-        case name
-        case is_rtl = "is_rtl"
-    }
-    
+    let isRtl: Bool
 }

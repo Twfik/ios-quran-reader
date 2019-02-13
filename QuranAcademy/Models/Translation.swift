@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Translations: Decodable {
+struct TranslationsResponse: Codable {
     
     let translations: [Translation]
     enum CodingKeys: String, CodingKey {
@@ -17,28 +17,15 @@ struct Translations: Decodable {
     
 }
 
-struct Translation: Decodable {
+struct Translation: Codable {
     
     let id: Int
     let code: String
-    let author: String
+    let name: String
     let order: Int
-    let isTafsir: Bool
-    let lngCode: String
+    let isTafseer: Bool
+    let languageCode: String
     let version: String
-    let url: String
     let translationUpdatedAt: String
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case code
-        case author = "name"
-        case order
-        case isTafsir = "is_tafseer"
-        case lngCode = "language_code"
-        case version
-        case url = "file_url"
-        case translationUpdatedAt = "translation_updated_at"
-    }
-    
+    let fileUrl: String
 }

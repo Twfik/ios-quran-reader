@@ -8,23 +8,20 @@
 
 import Foundation
 
-struct WordTranslations: Decodable {
+struct WordTranslationsResponse: Codable {
     
-    let wordTranslation: [WordTranslation]
+    let wordTranslations: [WordTranslation]
     
     enum CodingKeys: String, CodingKey {
-        case wordTranslation = "data"
+        case wordTranslations = "data"
     }
 }
 
-struct WordTranslation: Decodable {
-    let languageCode: String
-    let language: String
-    let url: String
+struct WordTranslation: Codable {
     
-    enum CodingKeys: String, CodingKey {
-        case languageCode = "language_code"
-        case language = "language_name"
-        case url = "file_url"
-    }
+    let languageCode: String
+    let languageName: String
+    let fileUrl: String
+    let version: String
+    let translationUpdatedAt: String
 }
