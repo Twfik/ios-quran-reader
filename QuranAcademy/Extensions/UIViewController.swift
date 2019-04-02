@@ -10,6 +10,11 @@ import UIKit
 
 extension UIViewController {
     
+    // Скрывает текст кнопки Назад
+    open override func awakeFromNib() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+    }
+    
     func disableAutomaticScrollViewInsets() {
         if #available(iOS 11, *) {} else {
             self.automaticallyAdjustsScrollViewInsets = false

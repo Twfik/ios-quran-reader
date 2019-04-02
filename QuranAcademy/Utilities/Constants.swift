@@ -19,9 +19,15 @@ enum Keys {
     static let kLanguage = "kLanguage"
     static let kTranslation = "kTranslation"
     static let kWordTranslation = "kWordTranslation"
+    static let kArabicFontSize = "kArabicFontSize"
+    static let kTranslationFontSize = "kTranslationFontSize"
+    static let kArabicFont = "kArabicFont"
+    static let kTranslationFont = "kTranslationFont"
+    static let kArabicEnable = "kArabicEnable"
+    static let kTranslateEnable = "kTranslateEnable"
+
 }
 
-/// Энум для удобного об
 enum Tables {
         
     static var language: String {

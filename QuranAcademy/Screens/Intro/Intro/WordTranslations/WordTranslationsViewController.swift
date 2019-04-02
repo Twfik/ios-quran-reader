@@ -28,25 +28,31 @@ extension WordTranslationsViewController {
     private func setup() {
         setupTableView()
         getTranslations()
+        addRightNavBarButton()
     }
     
     private func setupTableView() {
         tableView.registerNib(SimpleCell.self)
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
-        if !isSettingsVC {
-            tableView.setHeaderView(text: "Выберите пословный перевод")
-            addRightNavBarButton()
-        } else {
+        setupHeaderView()
+    }
+    
+    private func setupHeaderView() {
+        guard !isSettingsVC else {
             title = "Пословный перевод"
-        }
+            return }
+        let headerView = UIView.loadFromNib(SimpleHeader.self)
+        headerView.configure(text: "Выберите пословный перевод")
+        tableView.setTableHeaderView(header: headerView, height: 150)
     }
     
     private func getTranslations() {
-        let db = SQLiteStorage(.list)
-        wordTranslations = db.objects(WordTranslation.self, table: Tables.wordTranslation)
+        let db = SQLiteStorage()
+        wordTranslations = db.objects(WordTranslation.self)
     }
     
     private func addRightNavBarButton() {
+        guard !isSettingsVC else { return }
         let barButtonItem = UIBarButtonItem(title: "Далее",
                                             style: .plain,
                                             target: self,

@@ -9,7 +9,7 @@
 import SQLite
 
 
-struct SuraTable {
+struct SuraTable: SQLiteTableCreator {
     
     private let id = Expression<Int>("id")
     private let suraNumber = Expression<Int>("suraNumber")
@@ -22,9 +22,9 @@ struct SuraTable {
     private let translation = Expression<String>("translation")
     private let transliteration = Expression<String>("transliteration")
     
-    func createTable(_ name: String, _ database: Connection) {
+    func createTable(_ type: SQLiteModel.Type) {
         do {
-            try database.run(Table(name).create(ifNotExists: true) { table in
+            try Connection(type.path).run(Table(type.table).create(ifNotExists: true) { table in
                 table.column(id, unique: true)
                 table.column(suraNumber)
                 table.column(ayatCount)

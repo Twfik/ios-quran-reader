@@ -18,6 +18,7 @@ enum QuranEndpoint {
 }
 
 extension QuranEndpoint: TargetType {
+    
     var baseURL: URL {
         return URL(string: BASE_URL)!
     }
@@ -28,7 +29,7 @@ extension QuranEndpoint: TargetType {
         case .getQuranTextURL: return "quran/arabic-text"
         case .getSuras: return "quran/suras"
         case .getSurasTranslations: return "quran/suras/name-translations"
-        case .getTranslationsAndTafsirs: return "quran/translations?format_version=1"
+        case .getTranslationsAndTafsirs: return "quran/translations"
         case .getWordByWordTranslations: return "quran/word-by-word-translations"
         }
     }

@@ -10,38 +10,25 @@ import SQLite
 
 final class SQLiteStorage: SQLiteStorageProtocol {
     
-    private var db: Connection?
-    private lazy var sura = SuraTable()
-    private lazy var language = LanguageTable()
-    private lazy var translation = TranslationTable()
-    private lazy var wordTranslation = WordTranslationTable()
-    var isDatabaseEmpty = false
-
-    
-    init(_ type: DatabaseType) {
+    private func add<T: SQLiteModel>(_ item: T) -> Int64? {
+        let path = type(of: item).path
+        let name = type(of: item).table
         do {
-            let database = try Connection(type.path)
-            db = database
-        } catch {
-            print(error)
-        }
-    }
-    
-    private func add(_ item: Codable, table: Table) -> Int64? {
-        do {
-            return try db?.run(table.insert(item))
+            return try Connection(path).run(Table(name).insert(item))
         } catch {
             print(error.localizedDescription)
             return nil
         }
     }
     
-    func objects<T>(_ type: T.Type, table: String) -> [T] where T : Codable {
+    func objects<T: SQLiteModel>(_ type: T.Type) -> [T] {
         var array = [T]()
         
         do {
-            array = try db!.prepare(Table("\(table)")).map { row in
-                return try row.decode()
+           try DispatchQueue.global(qos: .userInteractive).sync {
+                array = try Connection(type.path).prepare(Table(type.table)).map { row in
+                    return try row.decode()
+            }
             }
         } catch {
             print(error.localizedDescription)
@@ -49,13 +36,15 @@ final class SQLiteStorage: SQLiteStorageProtocol {
         return array
     }
     
-    func objects<T: Codable>(with id: Int, _ type: T.Type, table: String, columnName: String = "sura") -> [T] {
+    func objects<T: SQLiteModel>(with id: Int, _ type: T.Type, columnName: String = "sura") -> [T] {
         var array = [T]()
         let columnID = Expression<Int>(columnName)
 
         do {
-            array = try db!.prepare(Table("\(table)").filter(columnID == id)).map { row in
-                return try row.decode()
+           try DispatchQueue.global(qos: .userInteractive).sync {
+                array = try Connection(type.path).prepare(Table(type.table).filter(columnID == id)).map { row in
+                    return try row.decode()
+                }
             }
             
         } catch {
@@ -64,33 +53,22 @@ final class SQLiteStorage: SQLiteStorageProtocol {
         return array
     }
     
-    func save(_ type: [Codable], table: String) {
-        for i in type {
-            _ = add(i, table: Table("\(table)"))
+    func save<T: SQLiteModel>(_ types: [T]) {
+        for i in types {
+            _ = add(i)
         }
     }
     
-    func createTable(_ name: String, _ type: TableType) {
-        switch type {
-        case .sura:
-            sura.createTable(name, db!)
-        case .language:
-            language.createTable(name, db!)
-        case .translation:
-            translation.createTable(name, db!)
-        case .wordTranslation:
-            wordTranslation.createTable(name, db!)
-        case .tafsir:
-            print("tafsir")
-        }
-        
+    func createTable<T: SQLiteModel>(_ type: T.Type) {
+        type.tableCreator?.createTable(type)
     }
+
     
     func createListTables() {
-        sura.createTable(Tables.sura, db!)
-        language.createTable(Tables.language, db!)
-        translation.createTable(Tables.translation, db!)
-        wordTranslation.createTable(Tables.wordTranslation, db!)
+        createTable(SuraCodable.self)
+        createTable(Language.self)
+        createTable(Translation.self)
+        createTable(WordTranslation.self)
     }
     
 }

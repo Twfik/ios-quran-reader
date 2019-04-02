@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class TranslationCell: UITableViewCell {
+final class TranslationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var translationLabel: UILabel!
     @IBOutlet weak var translationLanguageLabel: UILabel!

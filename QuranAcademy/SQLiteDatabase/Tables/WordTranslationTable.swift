@@ -8,7 +8,7 @@
 
 import SQLite
 
-struct WordTranslationTable {
+struct WordTranslationTable: SQLiteTableCreator {
     
     private let languageCode = Expression<String>("languageCode")
     private let language = Expression<String>("languageName")
@@ -16,9 +16,9 @@ struct WordTranslationTable {
     private let version = Expression<String>("version")
     private let translationUpdatedAt = Expression<String>("translationUpdatedAt")
     
-    func createTable(_ name: String, _ database: Connection) {
+    func createTable(_ type: SQLiteModel.Type) {
         do {
-            try database.run(Table(name).create(ifNotExists: true) { table in
+            try Connection(type.path).run(Table(type.table).create(ifNotExists: true) { table in
                 table.column(languageCode)
                 table.column(language)
                 table.column(fileUrl)

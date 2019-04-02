@@ -6,7 +6,16 @@
 //  Copyright © 2019 Ayub. All rights reserved.
 //
 
-struct Word: Codable {
+struct Word: SQLiteModel {
+    
+    static var tableCreator: SQLiteTableCreator? = nil
+    static var table: String {
+        return Tables.words
+    }
+
+    static var path: String {
+        return DatabaseType.byWord.path
+    }
     let sura: Int
     let ayat: Int
     let text: String

@@ -14,26 +14,31 @@ final class TranslationsViewController: UIViewController {
     
     var translations = [Translation]()
     var isSettingsVC = false
-    let db = SQLiteStorage(.list)
+    let db = SQLiteStorage()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        translations = db.objects(Translation.self, table: Tables.translation)
-        tableView.registerNib(TranslationCell.self)
+        translations = db.objects(Translation.self)
+        tableView.registerNib(TranslationTableViewCell.self)
         tableView.estimatedRowHeight = 75
         tableView.rowHeight = UITableView.automaticDimension
-
-        if !isSettingsVC {
-            tableView.setHeaderView(text: "Выберите смысловой перевод")
-            addRightNavBarButton()
-        } else {
-            title = "Смысловой перевод"
-        }
-
+        setupHeaderView()
+        addRightNavBarButton()
     }
     
+    private func setupHeaderView() {
+        guard !isSettingsVC else {
+            title = "Смысловой перевод"
+            return }
+        let headerView = UIView.loadFromNib(SimpleHeader.self)
+        headerView.configure(text: "Выберите смысловой перевод")
+        tableView.setTableHeaderView(header: headerView, height: 150)
+    }
+
+    
     private func addRightNavBarButton() {
+        guard !isSettingsVC else { return }
         let barButtonItem = UIBarButtonItem(title: "Далее",
                                             style: .plain,
                                             target: self,
@@ -47,7 +52,7 @@ final class TranslationsViewController: UIViewController {
     }
     
     private func getLanguageBy(code: String) -> String {
-        let languages: [Language] = db.objects(Language.self, table: Tables.language)
+        let languages: [Language] = db.objects(Language.self)
         for language in languages {
             if language.code == code {
                 return language.name
@@ -79,7 +84,7 @@ extension TranslationsViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(TranslationCell.self, indexPath: indexPath)
+        let cell = tableView.dequeue(TranslationTableViewCell.self, indexPath: indexPath)
         
         let translation = translations[indexPath.row]
         let language = getLanguageBy(code: translation.languageCode)
@@ -92,7 +97,7 @@ extension TranslationsViewController: UITableViewDataSource, UITableViewDelegate
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cell = tableView.cellForRow(at: indexPath) as? TranslationCell else { return }
+        guard let cell = tableView.cellForRow(at: indexPath) as? TranslationTableViewCell else { return }
         
         let translation = translations[indexPath.row]
         

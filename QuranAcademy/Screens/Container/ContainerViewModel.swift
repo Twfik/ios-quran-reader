@@ -13,7 +13,7 @@ import RxSwift
 final class ContainerViewModel {
     
     let provider = MoyaProvider<QuranEndpoint>()
-    let database = SQLiteStorage(.list)
+    let database = SQLiteStorage()
     
     /// Возвращает список доступных языков
     func getLanguages() -> Observable<LanguagesResponse> {
@@ -71,12 +71,12 @@ final class ContainerViewModel {
     }
     
     func save(_ languages: [Language],_ translations: [Translation], _ wordTranslations: [WordTranslation],_ suras: [SuraCodable]) {
-        let db = SQLiteStorage(.list)
+        let db = SQLiteStorage()
         db.createListTables()
         
-        db.save(languages, table: Tables.language)
-        db.save(translations, table: Tables.translation)
-        db.save(wordTranslations, table: Tables.wordTranslation)
-        db.save(suras, table: Tables.sura)
+        db.save(languages)
+        db.save(translations)
+        db.save(wordTranslations)
+        db.save(suras)
     }
 }

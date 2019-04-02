@@ -23,6 +23,7 @@ enum DatabaseType {
         case .byWord: return "\(path)/\(Preferences.wordTranslationCode).db"
         }
     }
+    
 }
 
 enum TableType {
@@ -31,4 +32,14 @@ enum TableType {
     case translation
     case wordTranslation
     case tafsir
+    
+    var type: SQLiteModel.Type {
+        switch self {
+        case .language: return Language.self
+        case .sura: return Sura.self
+        case .tafsir: return Tafsir.self
+        case .translation: return Translation.self
+        case .wordTranslation: return WordTranslation.self
+        }
+    }
 }

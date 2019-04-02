@@ -10,29 +10,26 @@ import UIKit
 
 final class SurasViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    var suras: [Sura]!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var viewModel: SurasViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         title = "Коран"
+        
         navigationItem.setHidesBackButton(true, animated: true)
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1882352941, green: 0.4, blue: 0.6039215686, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.262745098, green: 0.3176470588, blue: 0.2196078431, alpha: 1)
         navigationController?.navigationBar.shadowImage = nil
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
+        NotificationCenter.default.addObserver(forName: .kUpdateSuras, object: nil, queue: nil) { [unowned self] (_) in
+            self.viewModel.updateSuras()
+            self.collectionView.reloadData()
+        }
         
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        setNeedsStatusBarAppearanceUpdate()
     }
     
 }
@@ -41,38 +38,44 @@ final class SurasViewController: UIViewController {
 extension SurasViewController {
     
     private func setup() {
-        tableViewSetup()
+        collectionViewSetup()
         
     }
     
-    private func tableViewSetup() {
-        tableView.registerNib(ChapterCell.self)
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedSectionHeaderHeight = 100
+    private func collectionViewSetup() {
+        collectionView.registerNib(ChapterCell.self)
     }
     
 }
 
-extension SurasViewController: UITableViewDelegate, UITableViewDataSource {
+extension SurasViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return suras.count
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let leftRightInsets: CGFloat = 16 * 2
+        return CGSize(width: collectionView.bounds.width - leftRightInsets, height: 80)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let sura = suras[indexPath.row]
-        let cell = tableView.dequeue(ChapterCell.self, indexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return viewModel.suras.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let sura = viewModel.suras[indexPath.row]
+        let cell = collectionView.dequeue(ChapterCell.self, indexPath: indexPath)
         cell.configure(sura: sura)
         return cell
+        
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let suraDetail = UIStoryboard.get(SuraDetailViewController.self)
-        let viewModel = SuraDetailViewModel(sura: suras[indexPath.row])
+        let viewModel = SuraDetailViewModel(sura: self.viewModel.suras[indexPath.row])
         suraDetail.viewModel = viewModel
-        push(suraDetail, animated: true)
-        tableView.deselectRow(at: indexPath, animated: true)
+        
+        self.push(suraDetail, animated: true)
+        self.collectionView.deselectItem(at: indexPath, animated: true)
     }
     
 }

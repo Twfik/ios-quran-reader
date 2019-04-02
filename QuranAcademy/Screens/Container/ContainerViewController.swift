@@ -47,15 +47,14 @@ final class ContainerViewController: UIViewController {
                                       suras)
                 
                 self?.setWelcomeVC()
-//                self?.removeSplashView()
             }, onError: { (error) in
                 print(error.localizedDescription)
             }).disposed(by: bag)
     }
     
     private func beginSetuping() {
-        let db = SQLiteStorage(.list)
-        let languages: [Language] = db.objects(Language.self, table: Tables.language)
+        let db = SQLiteStorage()
+        let languages: [Language] = db.objects(Language.self)
         
         if languages.isEmpty {
             fetchIntroItems()
@@ -81,6 +80,11 @@ final class ContainerViewController: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.set(navi, animated: true)
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
+            self.removeSplashView()
+        })
+
     }
     
     private func setTabbar() {

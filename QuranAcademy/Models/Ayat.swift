@@ -6,8 +6,22 @@
 //  Copyright © 2019 Ayub. All rights reserved.
 //
 
-class Ayat: Codable {
+struct Ayat: SQLiteModel {
+    
+    static var tableCreator: SQLiteTableCreator? = nil
+    
+    static var table: String {
+        return Tables.ayat
+    }
+    
+    static var path: String {
+        return DatabaseType.quran.path
+    }
     let sura: Int
     let ayat: Int
     let text: String
+    let text_tajweed: String
+    let text_mequran: String
+    let ayat_number: String
 }
+

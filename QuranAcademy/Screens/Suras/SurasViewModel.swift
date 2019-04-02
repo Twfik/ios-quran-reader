@@ -17,8 +17,7 @@ final class SurasViewModel {
     }
     
     @objc func updateSuras() {
-        suras = []
-        suras = SQLiteStorage(.list).objects(Sura.self, table: Tables.sura)
+        suras = SQLiteStorage().objects(Sura.self)
     }
     
 }

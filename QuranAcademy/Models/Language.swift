@@ -17,7 +17,17 @@ struct LanguagesResponse: Codable {
     }
 }
 
-struct Language: Codable {
+struct Language: SQLiteModel {
+    
+    static var tableCreator: SQLiteTableCreator? = LanguageTable()
+    
+    static var table: String {
+        return Tables.language
+    }
+    
+    static var path: String {
+        return DatabaseType.list.path
+    }
     
     let id: Int
     let code: String

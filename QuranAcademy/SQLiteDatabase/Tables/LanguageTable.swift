@@ -8,16 +8,16 @@
 
 import SQLite
 
-struct LanguageTable {
-    
+struct LanguageTable: SQLiteTableCreator {
+        
     let id = Expression<Int>("id")
     let code = Expression<String>("code")
     let name = Expression<String>("name")
     let isRtl = Expression<Bool>("isRtl")
     
-    func createTable(_ name: String, _ database: Connection) {
+    func createTable(_ type: SQLiteModel.Type) {
         do {
-            try database.run(Table(name).create(ifNotExists: true) { table in
+            try Connection(type.path).run(Table(type.table).create(ifNotExists: true) { table in
                 table.column(id, unique: true)
                 table.column(code)
                 table.column(self.name)

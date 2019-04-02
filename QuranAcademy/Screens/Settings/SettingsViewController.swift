@@ -13,15 +13,77 @@ final class SettingsViewController: UITableViewController {
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var translationAuthorLabel: UILabel!
     @IBOutlet weak var wordTranslationLabel: UILabel!
-    
+    @IBOutlet weak var arabicSwitch: UISwitch!
+    @IBOutlet weak var translationSwitch: UISwitch!
+    @IBOutlet weak var tafsirSwitch: UISwitch!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setup()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        languageLabel.text = "\(Preferences.language)"
+        switch indexPath.section {
+        // Секция Основные
+        case 0:
+            switch indexPath.row {
+            case 0:
+                let languagesVC = UIStoryboard.get(LanguagesViewController.self)
+                let viewModel = LanguagesViewModel()
+                languagesVC.viewModel = viewModel
+                languagesVC.isSettingsVC = true
+                push(languagesVC, animated: true)
+            case 1:
+                let translationsVC = UIStoryboard.get(TranslationsViewController.self)
+                translationsVC.isSettingsVC = true
+                push(translationsVC, animated: true)
+            case 2:
+                let wordTranslationsVC = UIStoryboard.get(WordTranslationsViewController.self)
+                wordTranslationsVC.isSettingsVC = true
+                push(wordTranslationsVC, animated: true)
+            default:break
+            }
+            
+        // Секция Настройка Отображения
+        case 1:
+            switch indexPath.row {
+            case 3:
+                print("3")
+                let fontVC = FontViewController()
+                push(fontVC, animated: true)
+            case 4:
+                print("4")
+            default: print("")
+            }
+            print("Секция 2")
+            
+        case 2:
+            
+            switch indexPath.row {
+            case 0: print("")
+            default: break
+            }
+            
+        // Дефолтная секция
+        default:  break
+        }
         
-        
+    }
+    
+}
+
+extension SettingsViewController {
+    
+    private func setup() {
+        setupNavigationController()
+        setupLabels()
+        setupSwitches()
+        disableSwitchIfNeeded()
+    }
+    
+    private func setupNavigationController() {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.262745098, green: 0.3176470588, blue: 0.2196078431, alpha: 1)
@@ -29,29 +91,38 @@ final class SettingsViewController: UITableViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.row {
-        case 0:
-            let languagesVC = UIStoryboard.get(LanguagesViewController.self)
-            let viewModel = LanguagesViewModel()
-            languagesVC.viewModel = viewModel
-            languagesVC.isSettingsVC = true
-            push(languagesVC, animated: true)
-        case 1:
-            let translationsVC = UIStoryboard.get(TranslationsViewController.self)
-            translationsVC.isSettingsVC = true
-            push(translationsVC, animated: true)
-        case 2:
-            let wordTranslationsVC = UIStoryboard.get(WordTranslationsViewController.self)
-            wordTranslationsVC.isSettingsVC = true
-            push(wordTranslationsVC, animated: true)
-        default:
-            break
-        }
-
+    private func setupLabels() {
+        languageLabel.text = "\(Preferences.language)"
+        translationAuthorLabel.text = Preferences.translation
+        wordTranslationLabel.text = Preferences.wordTranslation
     }
+    
+    private func setupSwitches() {
+        arabicSwitch.isOn = Preferences.showArabic
+        translationSwitch.isOn = Preferences.showTranslation
+    }
+    
+    private func disableSwitchIfNeeded() {
+        translationSwitch.isEnabled = arabicSwitch.isOn
+        arabicSwitch.isEnabled = translationSwitch.isOn
+    }
+}
 
+// MARK: - Actions
+extension SettingsViewController {
     
+    @IBAction func showArabic(_ sender: UISwitch) {
+        disableSwitchIfNeeded()
+        Preferences.showArabic = sender.isOn
+    }
     
+    @IBAction func showTranslations(_ sender: UISwitch) {
+        disableSwitchIfNeeded()
+        Preferences.showTranslation = sender.isOn
+    }
+    
+    @IBAction func onlyTafsir(_ sender: UISwitch) {
+        
+    }
     
 }

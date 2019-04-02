@@ -14,10 +14,10 @@ class LanguagesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var indexNumber = -1
-    private var db = SQLiteStorage(.list)
+    private var db = SQLiteStorage()
     var viewModel: LanguagesViewModel!
     var isSettingsVC = false
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,14 +42,12 @@ class LanguagesViewController: UIViewController {
 extension LanguagesViewController {
     
     private func setup() {
+        addRightNavBarButton()
         setupTableView()
-
-        if !isSettingsVC {
-            addRightNavBarButton()
-        }
     }
     
     private func addRightNavBarButton() {
+        guard !isSettingsVC else { return }
         let barButtonItem = UIBarButtonItem(title: "Далее",
                                             style: .plain,
                                             target: self,
@@ -65,37 +63,38 @@ extension LanguagesViewController {
     private func setupTableView() {
         tableView.registerNib(SimpleCell.self)
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
-        if !isSettingsVC {
-            tableView.setHeaderView(text: "Выберите перевод")
-        } else {
+        setupHeaderView()
+    }
+    
+    private func setupHeaderView() {
+        guard !isSettingsVC else {
             title = "Выберите язык"
-        }
+            return }
+        let headerView = UIView.loadFromNib(SimpleHeader.self)
+        headerView.configure(text: "Выберите перевод")
+        tableView.setTableHeaderView(header: headerView, height: 100)
     }
     
-    private func fetchSuras(_ code: String, completion: @escaping (() -> Void)) {
-        viewModel.getSuras()
-            .subscribe(onNext: { [unowned self] (suras) in
-                self.db.save(suras, table: Tables.sura)
-                completion()
-            }, onError: { (error) in
-                print(error.localizedDescription)
-            }).disposed(by: bag)
-    }
-    
-    private func fetchItems(completion: @escaping (() -> Void)) {
+    private func fetchItems(completion: @escaping ((Error?) -> Void)) {
         viewModel.getAll()
             .subscribe(onNext: { [unowned self] (lang, transl, wordTransl, sura) in
-                self.viewModel.containerViewModel.save(lang, transl, wordTransl, sura)
-                completion()
-            }, onError: { (error) in
-                print(error.localizedDescription)
+                if self.db.objects(Sura.self).isEmpty {
+                    self.viewModel.containerViewModel.save(lang, transl, wordTransl, sura)
+                }
+                completion(nil)
+                }, onError: { (error) in
+                    completion(error)
+                    print(error.localizedDescription)
             }).disposed(by: bag)
     }
     
     private func showSpinner(for cell: SimpleCell) {
         let spinner = UIActivityIndicatorView()
+        let spinnerView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
         spinner.style = .gray
-        cell.accessoryView = spinner
+        spinner.center = spinnerView.center
+        spinnerView.addSubview(spinner)
+        cell.accessoryView = spinnerView
         spinner.startAnimating()
     }
     
@@ -120,21 +119,32 @@ extension LanguagesViewController: UITableViewDataSource, UITableViewDelegate {
         
         let language = viewModel.languages[indexPath.row]
         let code = language.code
+        let prevCode = Preferences.code
         
         showSpinner(for: cell)
         Preferences.code = code
-        db.createTable(Tables.sura, .sura)
+        db.createTable(Sura.self)
         
-        fetchItems {
-            cell.accessoryView = nil
-            Preferences.language = language.name
-            NotificationCenter.default.post(name: .kUpdateSuras, object: nil)
+        self.fetchItems { [unowned self] error in
+            if error != nil {
+                self.showAlert(title: "Не удалось загрузить язык", message: "Попробуйте снова")
+                Preferences.code = prevCode
+            } else {
+                Preferences.language = language.name
+                NotificationCenter.default.post(name: .kUpdateSuras, object: nil)
+                    self.setCheckmark(cell: cell, language: language.name)
+            }
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
         
+    }
+    
+    private func setCheckmark(cell: UITableViewCell, language: String) {
+        cell.accessoryView = nil
+        
         for i in tableView.visibleCells {
-            if i.textLabel?.text != "\(language.name)" {
+            if i.textLabel?.text != language {
                 i.accessoryType = .none
             }
         }

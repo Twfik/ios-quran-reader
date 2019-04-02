@@ -17,7 +17,18 @@ struct TranslationsResponse: Codable {
     
 }
 
-struct Translation: Codable {
+struct Translation: SQLiteModel {
+    
+    static var tableCreator: SQLiteTableCreator? = TranslationTable()
+    static var table: String {
+        return Tables.translation
+    }
+
+    static var path: String {
+        return DatabaseType.list.path
+    }
+    
+    
     
     let id: Int
     let code: String

@@ -11,7 +11,7 @@ import RxSwift
 
 extension ObservableType where E == Data {
     
-    func decode<T>(_ type: T.Type, decoder: JSONDecoder = QAJSONDecoder()) -> Observable<T> where T: Decodable {
+    func decode<T>(_ type: T.Type, decoder: JSONDecoder = QAJSONDecoder()) -> Observable<T> where T: Codable {
         return map { data -> T in
             return try decoder.decode(T.self, from: data)
         }

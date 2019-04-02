@@ -16,7 +16,17 @@ struct SurasResponse: Codable {
     }
 }
 
-struct Sura: Codable {
+struct Sura: SQLiteModel {
+    
+    static var tableCreator: SQLiteTableCreator? = SuraTable()
+    static var table: String {
+        return Tables.sura
+    }
+
+    static var path: String {
+        return DatabaseType.list.path
+    }
+
     let id: Int
     let suraNumber: Int
     let ayatCount: Int
@@ -29,7 +39,19 @@ struct Sura: Codable {
     let transliteration: String
 }
 
-struct SuraCodable: Codable {
+struct SuraCodable: SQLiteModel {
+    
+    static var table: String {
+        return Tables.sura
+    }
+    
+    static var path: String {
+        let type = DatabaseType.list
+        return type.path
+    }
+
+    static var tableCreator: SQLiteTableCreator? = SuraTable()
+    
     let id: Int
     let suraNumber: Int
     let ayatCount: Int

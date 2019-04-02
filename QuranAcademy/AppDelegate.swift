@@ -20,8 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setup() {
+        UISwitch.appearance().onTintColor = #colorLiteral(red: 0.262745098, green: 0.3176470588, blue: 0.2196078431, alpha: 1)
         setupRootViewController()
         setupNavigationBar()
+        registerUserDefaults()
     }
     
     private func setupRootViewController() {
@@ -34,11 +36,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func setupNavigationBar() {
-//        UINavigationBar.appearance().shadowImage = UIImage()
-//        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().tintColor = #colorLiteral(red: 0.1882352941, green: 0.4, blue: 0.6039215686, alpha: 1)
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 0, green: 0.737254902, blue: 0.8431372549, alpha: 1)
         UINavigationBar.appearance().isTranslucent = false
-//        UINavigationBar.appearance().barTintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+    }
+    
+    private func registerUserDefaults() {
+        UserDefaults.standard.register(defaults: [
+            Keys.kArabicFontSize : 17,
+            Keys.kTranslationFontSize : 17,
+            Keys.kArabicEnable : true,
+            Keys.kTranslateEnable : true,
+            Keys.kArabicFont: "me_quran2",
+            Keys.kTranslationFont: "Proxima Nova"
+            ])
     }
 
 }

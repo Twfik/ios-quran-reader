@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="me_quran.ttf">
+            <string>me_quran</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iP4-Jd-pa4" customClass="BasmalaHeader" customModule="QuranAcademy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="678" height="107"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sd4-Bc-8th">
+                    <rect key="frame" x="0.0" y="0.0" width="678" height="107"/>
+                    <fontDescription key="fontDescription" name="me_quran" family="me_quran" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="pU8-7a-VnV" firstAttribute="trailing" secondItem="Sd4-Bc-8th" secondAttribute="trailing" id="0vk-WN-RJM"/>
+                <constraint firstItem="pU8-7a-VnV" firstAttribute="bottom" secondItem="Sd4-Bc-8th" secondAttribute="bottom" id="1eu-ir-MLq"/>
+                <constraint firstItem="Sd4-Bc-8th" firstAttribute="leading" secondItem="pU8-7a-VnV" secondAttribute="leading" id="dBJ-g7-g9H"/>
+                <constraint firstItem="Sd4-Bc-8th" firstAttribute="top" secondItem="pU8-7a-VnV" secondAttribute="top" id="xpt-ea-lPa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="pU8-7a-VnV"/>
+            <connections>
+                <outlet property="label" destination="Sd4-Bc-8th" id="TEj-vg-6PL"/>
+            </connections>
+            <point key="canvasLocation" x="251.19999999999999" y="688.60569715142435"/>
+        </view>
+    </objects>
+</document>

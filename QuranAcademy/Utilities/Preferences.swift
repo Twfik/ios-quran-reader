@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 final class Preferences {
     
@@ -63,7 +64,7 @@ final class Preferences {
     /// Название выбранного смыслового перевода для отображения в настройках
     static var translation: String {
         get {
-            let transl = UserDefaults.standard.string(forKey: Keys.kTranslation) ?? ""
+            let transl = UserDefaults.standard.string(forKey: Keys.kTranslation) ?? "Не выбрано"
             return transl
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.kTranslation)
@@ -73,11 +74,62 @@ final class Preferences {
     /// Название выбранного пословного перевода для отображения в настройках
     static var wordTranslation: String {
         get {
-            let wordTransl = UserDefaults.standard.string(forKey: Keys.kWordTranslation) ?? ""
+            let wordTransl = UserDefaults.standard.string(forKey: Keys.kWordTranslation) ?? "Не выбрано"
             return wordTransl
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.kWordTranslation)
         }
     }
+    
+    static var arabicFontSize: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: Keys.kArabicFontSize)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.kArabicFontSize)
+        }
+    }
+    
+    static var translationFontSize: Int {
+        get {
+            return UserDefaults.standard.integer(forKey: Keys.kTranslationFontSize)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.kTranslationFontSize)
+        }
+    }
+    
+    static var arabicFont: String {
+        get {
+            let wordTransl = UserDefaults.standard.string(forKey: Keys.kArabicFont) ?? "me_quran2"
+            return wordTransl
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.kArabicFont)
+        }
+    }
+    
+    static var translationFont: String {
+        get {
+            let wordTransl = UserDefaults.standard.string(forKey: Keys.kTranslationFont) ?? "Proxima Nova Light"
+            return wordTransl
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.kTranslationFont)
+        }
+    }
+    
+    static var showArabic: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Keys.kArabicEnable)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.kArabicEnable)
+        }
+    }
+    
+    static var showTranslation: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: Keys.kTranslateEnable)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.kTranslateEnable)
+        }
+    }
+
     
 }
