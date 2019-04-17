@@ -25,7 +25,6 @@ enum Keys {
     static let kTranslationFont = "kTranslationFont"
     static let kArabicEnable = "kArabicEnable"
     static let kTranslateEnable = "kTranslateEnable"
-
 }
 
 enum Tables {

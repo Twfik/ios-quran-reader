@@ -24,7 +24,6 @@ final class WelcomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0, green: 0.737254902, blue: 0.8431372549, alpha: 1)
-        
     }
 
     @IBAction func setupButtonTapped(_ sender: UIButton) {
@@ -41,8 +40,7 @@ final class WelcomeViewController: UIViewController {
     @IBAction func skipButtonTapped(_ sender: UIButton) {
         let tabbar = UIStoryboard.get(MainTabBarController.self)
         UserDefaults.standard.set(true, forKey: Keys.isСonfigured)
-        navigationController?.setNavigationBarHidden(true, animated: true)
-        push(tabbar, animated: true)
+        navigationController?.setViewControllers([tabbar], animated: true)
     }
     
 }

@@ -65,6 +65,12 @@ extension UIView {
         layer.add(animation, forKey: CATransitionType.fade.rawValue)
     }
     
-    
+    func addShadow() {
+        layer.cornerRadius = 5.0
+        layer.shadowColor = #colorLiteral(red: 0.7540688515, green: 0.7540867925, blue: 0.7540771365, alpha: 1).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowRadius = 2.5
+        layer.shadowOpacity = 1.0
+    }
     
 }

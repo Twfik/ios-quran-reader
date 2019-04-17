@@ -10,18 +10,24 @@ import UIKit
 
 class FontViewController: UIViewController {
     
-    let arabicFonts = ["me_quran", "me_quran2", "KFGQPC Uthmanic Script HAFS"]
+    let arabicFonts = ["me_quran2", "KFGQPC Uthmanic Script HAFS"]
     let translationFonts = ["Proxima Nova", "Georgia", "Palatino"]
     
+    @IBOutlet weak var tableViewHeighConstraint: NSLayoutConstraint!
+    
+    var selectedSegmentIndex: Int {
+        return segmentedControl.selectedSegmentIndex
+    }
+    
     var fonts: [String] {
-        return segmentedControl.selectedSegmentIndex == 0 ? arabicFonts : translationFonts
+        return selectedSegmentIndex == 0 ? arabicFonts : translationFonts
     }
     var currentFont: String {
-       return segmentedControl.selectedSegmentIndex == 0 ? Preferences.arabicFont : Preferences.translationFont
+       return selectedSegmentIndex == 0 ? Preferences.arabicFont : Preferences.translationFont
     }
     
     var currentFontSize: Int {
-        return segmentedControl.selectedSegmentIndex == 0 ? Preferences.arabicFontSize : Preferences.translationFontSize
+        return selectedSegmentIndex == 0 ? Preferences.arabicFontSize : Preferences.translationFontSize
     }
     
     var exampleText: String {
@@ -38,6 +44,18 @@ class FontViewController: UIViewController {
         super.viewDidLoad()
         setup()
         title = "Шрифты"
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        let height = selectedSegmentIndex == 0 ? (50 * arabicFonts.count) : (50 * translationFonts.count)
+        UIView.animate(withDuration: 0.2) {
+            self.tableViewHeighConstraint.constant = CGFloat(height)
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +81,9 @@ extension FontViewController {
     
     private func setupTableView() {
         tableView.registerNib(FontCell.self)
+        tableView.clipsToBounds = false
+//        tableView.layer.masksToBounds = false
+        tableView.addShadow()
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 1))
     }
     

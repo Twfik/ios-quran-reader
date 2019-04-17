@@ -51,10 +51,10 @@
         <!--SettingsViewController-->
         <scene sceneID="kDC-0X-mcQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CqG-HA-FZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="SettingsViewController" id="vTV-hd-MMz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Настройки" image="tabBarItem:DCa-ql-ZUV:image" id="DCa-ql-ZUV"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CqG-HA-FZy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="145" y="299"/>
         </scene>

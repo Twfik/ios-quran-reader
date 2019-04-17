@@ -20,6 +20,10 @@ final class WordTranslationsViewController: UIViewController {
         setup()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return isSettingsVC ? .lightContent : .default
+    }
+    
 }
 
 //MARK: - Setup
@@ -63,8 +67,7 @@ extension WordTranslationsViewController {
     @objc private func pushTabbarController() {
         let tabbar = UIStoryboard.get(MainTabBarController.self)
         UserDefaults.standard.set(true, forKey: Keys.isСonfigured)
-        navigationController?.setNavigationBarHidden(true, animated: false)
-        push(tabbar, animated: true)
+        navigationController?.setViewControllers([tabbar], animated: true)
     }
     
 }

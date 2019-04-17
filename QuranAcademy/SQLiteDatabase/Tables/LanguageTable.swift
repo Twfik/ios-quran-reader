@@ -16,6 +16,7 @@ struct LanguageTable: SQLiteTableCreator {
     let isRtl = Expression<Bool>("isRtl")
     
     func createTable(_ type: SQLiteModel.Type) {
+        
         do {
             try Connection(type.path).run(Table(type.table).create(ifNotExists: true) { table in
                 table.column(id, unique: true)

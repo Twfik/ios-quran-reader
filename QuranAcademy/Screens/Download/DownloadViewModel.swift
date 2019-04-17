@@ -11,6 +11,9 @@ import RxSwift
 import RxCocoa
 import Moya
 
+typealias Success = Bool
+typealias Cancelled = Bool
+
 final class DownloadViewModel {
     
     private var provider = MoyaProvider<QuranEndpoint>()
@@ -18,8 +21,7 @@ final class DownloadViewModel {
     var progress = BehaviorRelay(value: Float())
     var fileName = ""
     var url = ""
-    
-    
+    var action: ((Success?, Error?, Cancelled?) -> Void)?
     
     func downloadFile(with url: URL,_ fileName: String) {
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
@@ -33,11 +35,13 @@ final class DownloadViewModel {
                 let progress = Float(progress.fractionCompleted)
                 self?.progress.accept(progress)
             }
-            .responseData { (data) in
+            .responseData { [weak self] (data) in
                 switch data.result {
                 case .success(let data):
+                    self?.action?(true, nil, nil)
                     print(data)
                 case .failure(let error):
+                    self?.action?(nil, error, nil)
                     print(error.localizedDescription)
                 }
                 
@@ -46,6 +50,7 @@ final class DownloadViewModel {
     }
     
     func cancelRequest() {
+        action?(nil, nil, true)
         request?.cancel()
     }
     

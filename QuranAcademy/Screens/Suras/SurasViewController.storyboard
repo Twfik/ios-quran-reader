@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kzd-Ux-ujB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Zk-f3-tuK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O2e-G0-bFY">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.94117647058823528" blue="0.8666666666666667" alpha="0.30429687500000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="7IP-UR-3TM">
                                     <size key="itemSize" width="50" height="50"/>
@@ -43,16 +43,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5X8-aF-goZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Коран" image="book" selectedImage="book" id="kZL-H8-fX0">
-                        <color key="badgeColor" red="0.18823529410000001" green="0.40000000000000002" blue="0.60392156860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
-                    <navigationItem key="navigationItem" title="Коран" id="wag-M0-qf8">
-                        <barButtonItem key="leftBarButtonItem" title="Джузы" id="S7O-Zy-1L0"/>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="play" id="N8Q-Bp-KXT"/>
-                            <barButtonItem systemItem="action" id="fNh-LR-LZ7"/>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Коран" image="Surah" selectedImage="Surah Active" id="kZL-H8-fX0"/>
+                    <navigationItem key="navigationItem" title="Коран" id="wag-M0-qf8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="O2e-G0-bFY" id="o5E-D6-pZV"/>
@@ -62,26 +54,9 @@
             </objects>
             <point key="canvasLocation" x="964" y="97.601199400299862"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Pc9-7W-6cW">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kzd-Ux-ujB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F8h-BJ-zbK">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7Zk-f3-tuK" kind="relationship" relationship="rootViewController" id="C28-Sf-d1Y"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v3c-Mg-RUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="97.601199400299862"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="book" width="24" height="24"/>
+        <image name="Surah" width="26" height="26"/>
+        <image name="Surah Active" width="26" height="26"/>
     </resources>
 </document>

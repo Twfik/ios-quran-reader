@@ -33,7 +33,7 @@ class LanguagesViewController: UIViewController {
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
+        return isSettingsVC ? .lightContent : .default
     }
     
 }
@@ -129,6 +129,7 @@ extension LanguagesViewController: UITableViewDataSource, UITableViewDelegate {
             if error != nil {
                 self.showAlert(title: "Не удалось загрузить язык", message: "Попробуйте снова")
                 Preferences.code = prevCode
+                cell.accessoryView = nil
             } else {
                 Preferences.language = language.name
                 NotificationCenter.default.post(name: .kUpdateSuras, object: nil)

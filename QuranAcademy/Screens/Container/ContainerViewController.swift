@@ -2,7 +2,7 @@
 //  ContainerViewController.swift
 //  QuranAcademy
 //
-//  Created by Ayub on 04/01/2019.
+//  Created by Ayub on 13/04/2019.
 //  Copyright © 2019 Ayub. All rights reserved.
 //
 
@@ -12,8 +12,6 @@ import RxSwift
 final class ContainerViewController: UIViewController {
     
     let viewModel = ContainerViewModel()
-    var splashVC: UIView?
-    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         guard let viewControllerToCheck = presentedViewController ?? children.last else {
@@ -22,14 +20,12 @@ final class ContainerViewController: UIViewController {
         return viewControllerToCheck.preferredStatusBarStyle
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
     
     private func setup() {
-        setSplashView()
         setNeedViewController()
     }
     
@@ -42,56 +38,32 @@ final class ContainerViewController: UIViewController {
         viewModel.getIntroItems()
             .subscribe(onNext: { [weak self] (languages, translations, wordTranslations, suras) in
                 self?.viewModel.save(languages,
-                                      translations,
-                                      wordTranslations,
-                                      suras)
-                
+                                     translations,
+                                     wordTranslations,
+                                     suras)
                 self?.setWelcomeVC()
-            }, onError: { (error) in
-                print(error.localizedDescription)
+                }, onError: { (error) in
+                    print(error.localizedDescription)
             }).disposed(by: bag)
     }
     
     private func beginSetuping() {
         let db = SQLiteStorage()
         let languages: [Language] = db.objects(Language.self)
-        
-        if languages.isEmpty {
-            fetchIntroItems()
-        } else {
-            setWelcomeVC()
-        }
-    }
-    
-    private func setSplashView() {
-        splashVC = UIView.viewFromNibName("SplashView")
-        splashVC?.frame = self.view.frame
-        self.view.addSubview(splashVC ?? UIView())
-    }
-    
-    private func removeSplashView() {
-        splashVC?.removeFromSuperview()
-        splashVC = nil
+        languages.isEmpty ? fetchIntroItems() : setWelcomeVC()
     }
     
     private func setWelcomeVC() {
         let welcomeVC = UIStoryboard.get(WelcomeViewController.self)
         let navi = UINavigationController(rootViewController: welcomeVC)
-        UIView.animate(withDuration: 0.5) {
-            self.set(navi, animated: true)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0, execute: {
-            self.removeSplashView()
-        })
-
+        set(navi, animated: true)
     }
     
     private func setTabbar() {
         let tabbar = UIStoryboard.get(MainTabBarController.self)
+        let navigationVC = UINavigationController(rootViewController: tabbar)
         UserDefaults.standard.set(true, forKey: Keys.isСonfigured)
-        set(tabbar, animated: true)
+        set(navigationVC, animated: true)
     }
-
     
 }

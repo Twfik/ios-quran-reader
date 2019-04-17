@@ -28,11 +28,11 @@ extension MainTabBarController {
     private func setup() {
         setupTabBar()
         setupFirstViewController()
+        setupNavigationBar()
     }
     
     private func setupFirstViewController() {
-        guard let navigationController = children.first as? UINavigationController,
-            let surasViewController = navigationController.topViewController as? SurasViewController else { return }
+           guard let surasViewController = children.first as? SurasViewController else { return }
         let viewModel = SurasViewModel()
         surasViewController.viewModel = viewModel
     }
@@ -40,6 +40,14 @@ extension MainTabBarController {
     private func setupTabBar() {
         title = "Коран"
         tabBar.tintColor = #colorLiteral(red: 0.1882352941, green: 0.4, blue: 0.6039215686, alpha: 1)
+    }
+    
+    private func setupNavigationBar() {
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.262745098, green: 0.3176470588, blue: 0.2196078431, alpha: 1)
+        navigationController?.navigationBar.shadowImage = nil
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
     }
     
 }

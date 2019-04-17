@@ -15,11 +15,14 @@ final class SuraDetailViewController: UIViewController {
     
     var viewModel: SuraDetailViewModel!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
     }
-    
     
 }
 

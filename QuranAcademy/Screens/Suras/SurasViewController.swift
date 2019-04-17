@@ -13,18 +13,12 @@ final class SurasViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var viewModel: SurasViewModel!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         title = "Коран"
         
-        navigationItem.setHidesBackButton(true, animated: true)
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.262745098, green: 0.3176470588, blue: 0.2196078431, alpha: 1)
-        navigationController?.navigationBar.shadowImage = nil
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
         NotificationCenter.default.addObserver(forName: .kUpdateSuras, object: nil, queue: nil) { [unowned self] (_) in
             self.viewModel.updateSuras()
             self.collectionView.reloadData()

@@ -34,7 +34,6 @@ final class DownloadViewController: UIViewController {
         animate(view: containerView, on: true, scale: 0.85)
     }
     
-    
 }
 
 //MARK: - Setup

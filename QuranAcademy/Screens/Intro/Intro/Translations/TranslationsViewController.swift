@@ -15,7 +15,7 @@ final class TranslationsViewController: UIViewController {
     var translations = [Translation]()
     var isSettingsVC = false
     let db = SQLiteStorage()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,6 +27,10 @@ final class TranslationsViewController: UIViewController {
         addRightNavBarButton()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return isSettingsVC ? .lightContent : .default
+    }
+    
     private func setupHeaderView() {
         guard !isSettingsVC else {
             title = "Смысловой перевод"
@@ -35,7 +39,6 @@ final class TranslationsViewController: UIViewController {
         headerView.configure(text: "Выберите смысловой перевод")
         tableView.setTableHeaderView(header: headerView, height: 150)
     }
-
     
     private func addRightNavBarButton() {
         guard !isSettingsVC else { return }
@@ -61,7 +64,7 @@ final class TranslationsViewController: UIViewController {
         return ""
     }
     
-    private func showProgressView(message: String, url: String, fileName: String) {
+    private func downloadTranslationWithProgress(message: String, url: String, fileName: String, result: @escaping (Success?, Error?, Cancelled?) -> Void) {
         let loadingProgressVC = UIStoryboard.get(DownloadViewController.self)
         loadingProgressVC.modalPresentationStyle = .overCurrentContext
         loadingProgressVC.modalTransitionStyle = .crossDissolve
@@ -69,10 +72,12 @@ final class TranslationsViewController: UIViewController {
         let viewModel = DownloadViewModel()
         viewModel.url = url
         viewModel.fileName = fileName
+        viewModel.action = { succeses, error, cancelled in
+            result(succeses, error, cancelled)
+        }
         loadingProgressVC.viewModel = viewModel
         present(loadingProgressVC, animated: true)
     }
-    
     
 }
 
@@ -101,34 +106,41 @@ extension TranslationsViewController: UITableViewDataSource, UITableViewDelegate
         
         let translation = translations[indexPath.row]
         
-        Preferences.translationCode = translation.code
         let documentsURL = FileManager.default.documentsURL
-        let file = documentsURL.appendingPathComponent("\(Preferences.translationCode).db")
-
+        let file = documentsURL.appendingPathComponent("\(translation.code).db")
         
-        if !FileManager.default.fileExists(atPath: file.path) {
-            print(!FileManager.default.fileExists(atPath: file.path))
-            print(Preferences.translationCode)
-            showProgressView(message: translation.name, url: translation.fileUrl, fileName: "\(translation.code).db")
-        } else {
-            print(Preferences.translationCode)
+        if FileManager.default.fileExists(atPath: file.path) {
             Preferences.translationCode = translation.code
+            setCheckmark(cell: cell, translation: translation.code)
+        } else {
+            downloadTranslationWithProgress(message: translation.name,
+                             url: translation.fileUrl,
+                             fileName: "\(translation.code).db",
+                result: { [weak self] success, error, cancelled in
+                    guard error == nil && cancelled == nil else { return }
+                    self?.setCheckmark(cell: cell, translation: translation.code)
+                    Preferences.translationCode = translation.code
+            })
         }
         
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    private func setCheckmark(cell: UITableViewCell, translation: String) {
+        cell.accessoryView = nil
+        
         for i in tableView.visibleCells {
-            if i.textLabel?.text != "\(translation.code)" {
+            if i.textLabel?.text != translation {
                 i.accessoryType = .none
             }
         }
         
         cell.accessoryType = .checkmark
-        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath)?.accessoryType = .none
     }
-    
-    
     
 }

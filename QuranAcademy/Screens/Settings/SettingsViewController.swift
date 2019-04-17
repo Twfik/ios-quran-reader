@@ -49,7 +49,7 @@ final class SettingsViewController: UITableViewController {
         // Секция Настройка Отображения
         case 1:
             switch indexPath.row {
-            case 3:
+            case 2:
                 print("3")
                 let fontVC = FontViewController()
                 push(fontVC, animated: true)
@@ -77,18 +77,10 @@ final class SettingsViewController: UITableViewController {
 extension SettingsViewController {
     
     private func setup() {
-        setupNavigationController()
         setupLabels()
         setupSwitches()
         disableSwitchIfNeeded()
-    }
-    
-    private func setupNavigationController() {
-        navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.262745098, green: 0.3176470588, blue: 0.2196078431, alpha: 1)
-        navigationController?.navigationBar.shadowImage = nil
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
+        
     }
     
     private func setupLabels() {
@@ -98,13 +90,13 @@ extension SettingsViewController {
     }
     
     private func setupSwitches() {
-        arabicSwitch.isOn = Preferences.showArabic
-        translationSwitch.isOn = Preferences.showTranslation
+//        arabicSwitch.isOn = Preferences.showArabic
+//        translationSwitch.isOn = Preferences.showTranslation
     }
     
     private func disableSwitchIfNeeded() {
-        translationSwitch.isEnabled = arabicSwitch.isOn
-        arabicSwitch.isEnabled = translationSwitch.isOn
+//        translationSwitch.isEnabled = arabicSwitch.isOn
+//        arabicSwitch.isEnabled = translationSwitch.isOn
     }
 }
 

@@ -9,7 +9,6 @@
 import Foundation
 
 struct Verse {
-    
     let id: Int
     let basmala: Basmala
     let ayah: Ayat
