@@ -99,7 +99,7 @@ final class Preferences {
     
     static var arabicFont: String {
         get {
-            let wordTransl = UserDefaults.standard.string(forKey: Keys.kArabicFont) ?? "me_quran2"
+            let wordTransl = UserDefaults.standard.string(forKey: Keys.kArabicFont) ?? "me_quran"
             return wordTransl
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.kArabicFont)

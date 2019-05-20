@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="66" id="KGk-i7-Jjw" customClass="ThemeCell" customModule="QuranAcademy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXv-CI-1iS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="65.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TOQ-xE-iRa">
+                                <rect key="frame" x="45" y="10" width="230" height="45.5"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu9-5o-Jct">
+                                        <rect key="frame" x="0.0" y="3" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.73725490196078436" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="GFy-JJ-G4b"/>
+                                            <constraint firstAttribute="height" constant="40" id="z0Y-Fm-3Jw"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="blueThemeButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Q4g-Ya-U47"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5OF-Ix-y7C">
+                                        <rect key="frame" x="95" y="3" width="40" height="40"/>
+                                        <color key="backgroundColor" red="0.27058823529411763" green="0.72156862745098038" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="greenThemeButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pnw-Ps-4Tf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HtG-tp-CtH">
+                                        <rect key="frame" x="190" y="3" width="40" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="darkThemeButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="2kP-5X-lf0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="5OF-Ix-y7C" firstAttribute="width" secondItem="yu9-5o-Jct" secondAttribute="width" id="Hqr-A5-7ZX"/>
+                                    <constraint firstItem="5OF-Ix-y7C" firstAttribute="height" secondItem="yu9-5o-Jct" secondAttribute="height" id="MU7-yw-6wY"/>
+                                    <constraint firstItem="HtG-tp-CtH" firstAttribute="height" secondItem="yu9-5o-Jct" secondAttribute="height" id="WeT-MI-C0Y"/>
+                                    <constraint firstItem="HtG-tp-CtH" firstAttribute="width" secondItem="yu9-5o-Jct" secondAttribute="width" id="tAK-z6-YDk"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TOQ-xE-iRa" firstAttribute="leading" secondItem="RXv-CI-1iS" secondAttribute="leading" constant="45" id="IS5-z6-6DW"/>
+                            <constraint firstAttribute="trailing" secondItem="TOQ-xE-iRa" secondAttribute="trailing" constant="45" id="SYq-eS-Nwk"/>
+                            <constraint firstAttribute="bottom" secondItem="TOQ-xE-iRa" secondAttribute="bottom" constant="10" id="Z5x-MM-CTq"/>
+                            <constraint firstItem="TOQ-xE-iRa" firstAttribute="top" secondItem="RXv-CI-1iS" secondAttribute="top" constant="10" id="eQi-N7-yG0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="RXv-CI-1iS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="C3u-pm-aDc"/>
+                    <constraint firstItem="RXv-CI-1iS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="D3l-we-EIc"/>
+                    <constraint firstAttribute="trailing" secondItem="RXv-CI-1iS" secondAttribute="trailing" id="JR0-lJ-jKN"/>
+                    <constraint firstAttribute="bottom" secondItem="RXv-CI-1iS" secondAttribute="bottom" id="c1M-Hm-D9j"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="blueThemeButton" destination="yu9-5o-Jct" id="zcV-fh-ic1"/>
+                <outlet property="darkThemeButton" destination="HtG-tp-CtH" id="AZa-qz-wBw"/>
+                <outlet property="greenThemeButton" destination="5OF-Ix-y7C" id="Xfp-cB-6bd"/>
+                <outletCollection property="buttons" destination="yu9-5o-Jct" collectionClass="NSMutableArray" id="mHQ-IB-ULg"/>
+                <outletCollection property="buttons" destination="5OF-Ix-y7C" collectionClass="NSMutableArray" id="w1i-qG-XEU"/>
+                <outletCollection property="buttons" destination="HtG-tp-CtH" collectionClass="NSMutableArray" id="JHF-o4-EXh"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="132.58928571428572"/>
+        </tableViewCell>
+    </objects>
+</document>

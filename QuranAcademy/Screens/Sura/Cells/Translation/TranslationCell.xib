@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="90" id="dJW-gh-UrH" customClass="TranslationCell" customModule="QuranAcademy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dJW-gh-UrH" id="GDs-8D-wcd">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-I8-1HE">
+                        <rect key="frame" x="10" y="5" width="355" height="79.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qf-yX-q58">
+                                <rect key="frame" x="10" y="5" width="335" height="74.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3Qf-yX-q58" firstAttribute="leading" secondItem="Zvi-I8-1HE" secondAttribute="leading" constant="10" id="8Nd-19-UyX"/>
+                            <constraint firstAttribute="trailing" secondItem="3Qf-yX-q58" secondAttribute="trailing" constant="10" id="LCH-Qg-E9x"/>
+                            <constraint firstAttribute="bottom" secondItem="3Qf-yX-q58" secondAttribute="bottom" id="QAX-FF-0sb"/>
+                            <constraint firstItem="3Qf-yX-q58" firstAttribute="top" secondItem="Zvi-I8-1HE" secondAttribute="top" constant="5" id="TYu-Nj-DFA"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Zvi-I8-1HE" secondAttribute="trailing" constant="10" id="XGg-2I-tPb"/>
+                    <constraint firstAttribute="bottom" secondItem="Zvi-I8-1HE" secondAttribute="bottom" constant="5" id="ew9-s4-FX3"/>
+                    <constraint firstItem="Zvi-I8-1HE" firstAttribute="leading" secondItem="GDs-8D-wcd" secondAttribute="leading" constant="10" id="hO3-F4-afR"/>
+                    <constraint firstItem="Zvi-I8-1HE" firstAttribute="top" secondItem="GDs-8D-wcd" secondAttribute="top" constant="5" id="qgA-l8-6vb"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="containerView" destination="Zvi-I8-1HE" id="kL0-Ob-0Gh"/>
+                <outlet property="translationLabel" destination="3Qf-yX-q58" id="kxa-Ys-2on"/>
+            </connections>
+            <point key="canvasLocation" x="96.799999999999997" y="232.98350824587709"/>
+        </tableViewCell>
+    </objects>
+</document>

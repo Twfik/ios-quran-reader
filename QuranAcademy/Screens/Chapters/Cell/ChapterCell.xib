@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Proxima Nova Light.otf">
+            <string>ProximaNova-Light</string>
+        </array>
+        <array key="sura_names.ttf">
+            <string>icomoon</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bKJ-Ij-V89" customClass="ChapterCell" customModule="QuranAcademy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="506" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="506" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tub-9R-D7l">
+                        <rect key="frame" x="0.0" y="0.0" width="506" height="80"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellImage" translatesAutoresizingMaskIntoConstraints="NO" id="R9Q-3y-hCj">
+                                <rect key="frame" x="362" y="0.0" width="129" height="65"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xV8-bD-EAK">
+                                <rect key="frame" x="229" y="-5" width="257" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfN-UT-Cwt">
+                                        <rect key="frame" x="207" y="0.0" width="50" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="al-Munafikun" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXF-gx-zio">
+                                        <rect key="frame" x="202" y="52.5" width="55" height="12.5"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="10"/>
+                                        <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4Dy-rw-oQm">
+                                <rect key="frame" x="71" y="20.5" width="153" height="39.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="аль-Мунафикъун" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEx-cV-O1D">
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11 сура - 556 страница" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77i-Vs-0uG">
+                                        <rect key="frame" x="0.0" y="24.5" width="153" height="15"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="12"/>
+                                        <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5WB-CH-lhT">
+                                <rect key="frame" x="20" y="28" width="31" height="24.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="drI-hb-T7L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Light" family="Proxima Nova" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4Dy-rw-oQm" firstAttribute="centerY" secondItem="Tub-9R-D7l" secondAttribute="centerY" id="27f-3r-0Mv"/>
+                            <constraint firstItem="5WB-CH-lhT" firstAttribute="centerY" secondItem="Tub-9R-D7l" secondAttribute="centerY" id="5cN-or-8mJ"/>
+                            <constraint firstAttribute="trailing" secondItem="xV8-bD-EAK" secondAttribute="trailing" constant="20" id="7k0-H8-KTR"/>
+                            <constraint firstItem="xV8-bD-EAK" firstAttribute="bottom" secondItem="4Dy-rw-oQm" secondAttribute="bottom" id="MFc-d2-eOk"/>
+                            <constraint firstAttribute="trailing" secondItem="R9Q-3y-hCj" secondAttribute="trailing" constant="15" id="Qma-d5-4Lo"/>
+                            <constraint firstItem="xV8-bD-EAK" firstAttribute="leading" secondItem="4Dy-rw-oQm" secondAttribute="trailing" constant="5" id="Th9-iA-WrN"/>
+                            <constraint firstItem="4Dy-rw-oQm" firstAttribute="leading" secondItem="5WB-CH-lhT" secondAttribute="trailing" constant="20" id="ZNZ-a0-8dv"/>
+                            <constraint firstItem="R9Q-3y-hCj" firstAttribute="top" secondItem="Tub-9R-D7l" secondAttribute="top" id="a82-qq-8Kz"/>
+                            <constraint firstItem="5WB-CH-lhT" firstAttribute="leading" secondItem="Tub-9R-D7l" secondAttribute="leading" constant="20" id="x2l-NM-d11"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Tub-9R-D7l" firstAttribute="top" secondItem="bKJ-Ij-V89" secondAttribute="top" id="5E6-bP-0TT"/>
+                <constraint firstAttribute="bottom" secondItem="Tub-9R-D7l" secondAttribute="bottom" id="dec-YR-WsC"/>
+                <constraint firstAttribute="trailing" secondItem="Tub-9R-D7l" secondAttribute="trailing" id="jOe-IR-dIf"/>
+                <constraint firstItem="Tub-9R-D7l" firstAttribute="leading" secondItem="bKJ-Ij-V89" secondAttribute="leading" id="z2P-uC-b4M"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="H5w-7K-Uk7"/>
+            <size key="customSize" width="506" height="80"/>
+            <connections>
+                <outlet property="ayahCountLabel" destination="77i-Vs-0uG" id="T0c-l2-VbS"/>
+                <outlet property="containerView" destination="Tub-9R-D7l" id="bDC-Ux-5z4"/>
+                <outlet property="suraArLabel" destination="TfN-UT-Cwt" id="4ax-P7-PVR"/>
+                <outlet property="suraNumberLabel" destination="5WB-CH-lhT" id="IeH-ro-ul7"/>
+                <outlet property="suraTranslationLabel" destination="fEx-cV-O1D" id="e89-ld-Wah"/>
+                <outlet property="suraTransliterationLabel" destination="wXF-gx-zio" id="HjU-lG-NZN"/>
+            </connections>
+            <point key="canvasLocation" x="332.80000000000001" y="399.40029985007499"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cellImage" width="129" height="65"/>
+    </resources>
+</document>

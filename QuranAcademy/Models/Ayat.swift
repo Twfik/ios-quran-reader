@@ -9,7 +9,6 @@
 struct Ayat: SQLiteModel {
     
     static var tableCreator: SQLiteTableCreator? = nil
-    
     static var table: String {
         return Tables.ayat
     }
@@ -21,7 +20,5 @@ struct Ayat: SQLiteModel {
     let ayat: Int
     let text: String
     let text_tajweed: String
-    let text_mequran: String
-    let ayat_number: String
 }
 

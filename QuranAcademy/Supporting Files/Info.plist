@@ -2,13 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>KFGQPCUthmanicHafs.ttf</string>
-		<string>me_quran2.ttf</string>
-		<string>Proxima Nova Light.otf</string>
-		<string>me_quran.ttf</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -29,8 +22,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>me_quran_R3b.ttf</string>
+		<string>sura_names.ttf</string>
+		<string>KFGQPCUthmanicHafs.ttf</string>
+		<string>Proxima Nova Light.otf</string>
+		<string>me_quran111.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
-	<string>ContainerViewController</string>
+	<string>SplashScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

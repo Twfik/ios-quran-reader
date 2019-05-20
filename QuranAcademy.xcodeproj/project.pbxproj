@@ -7,18 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A805958922288C4D00706075 /* KFGQPCUthmanicHafs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A805958522288C4C00706075 /* KFGQPCUthmanicHafs.ttf */; };
 		A805958A22288C4D00706075 /* me_quran.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A805958622288C4C00706075 /* me_quran.ttf */; };
 		A805958B22288C4D00706075 /* Proxima Nova Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A805958722288C4D00706075 /* Proxima Nova Light.otf */; };
-		A805958C22288C4D00706075 /* me_quran2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A805958822288C4D00706075 /* me_quran2.ttf */; };
 		A81293BE21F9A449003AEAC4 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81293BD21F9A449003AEAC4 /* Notifications.swift */; };
+		A823B004227B591500F0F69F /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B003227B591500F0F69F /* Theme.swift */; };
+		A823B006227C604C00F0F69F /* FontViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A823B005227C604C00F0F69F /* FontViewController.storyboard */; };
+		A823B008227C8FC100F0F69F /* FontViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B007227C8FC100F0F69F /* FontViewPresenter.swift */; };
+		A823B00C227C905300F0F69F /* FontSizeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B00A227C905300F0F69F /* FontSizeCell.swift */; };
+		A823B00D227C905300F0F69F /* FontSizeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823B00B227C905300F0F69F /* FontSizeCell.xib */; };
+		A823B012227C90CE00F0F69F /* SegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B010227C90CE00F0F69F /* SegmentedControlCell.swift */; };
+		A823B013227C90CE00F0F69F /* SegmentedControlCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823B011227C90CE00F0F69F /* SegmentedControlCell.xib */; };
+		A823B017227C919000F0F69F /* ExampleTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B015227C919000F0F69F /* ExampleTextCell.swift */; };
+		A823B018227C919000F0F69F /* ExampleTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823B016227C919000F0F69F /* ExampleTextCell.xib */; };
+		A823B01A227C91C600F0F69F /* ExampleTextCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B019227C91C600F0F69F /* ExampleTextCellModel.swift */; };
+		A823B01E227C91F900F0F69F /* ThemeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B01C227C91F900F0F69F /* ThemeCell.swift */; };
+		A823B01F227C91F900F0F69F /* ThemeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A823B01D227C91F900F0F69F /* ThemeCell.xib */; };
+		A823B021227C923700F0F69F /* ThemeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B020227C923700F0F69F /* ThemeCellModel.swift */; };
+		A823B023227C925500F0F69F /* SegmentedControlCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B022227C925500F0F69F /* SegmentedControlCellModel.swift */; };
+		A823B025227C926C00F0F69F /* FontCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B024227C926C00F0F69F /* FontCellModel.swift */; };
+		A823B027227C928800F0F69F /* FontSizeCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B026227C928800F0F69F /* FontSizeCellModel.swift */; };
+		A823B029227C936D00F0F69F /* FontTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A823B028227C936D00F0F69F /* FontTableViewManager.swift */; };
 		A8295B18222C7CB200A59E51 /* String+TextSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8295B17222C7CB200A59E51 /* String+TextSize.swift */; };
 		A8295B1D222C85E300A59E51 /* TranslationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8295B1B222C85E300A59E51 /* TranslationCell.swift */; };
 		A8295B1E222C85E300A59E51 /* TranslationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8295B1C222C85E300A59E51 /* TranslationCell.xib */; };
 		A8295B23222C8F8600A59E51 /* BasmalaHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8295B21222C8F8600A59E51 /* BasmalaHeader.swift */; };
 		A8295B26222D28B900A59E51 /* Basmala.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8295B25222D28B900A59E51 /* Basmala.swift */; };
 		A8295B2B222DB6B300A59E51 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8295B29222DB6B300A59E51 /* FontViewController.swift */; };
-		A8295B2C222DB6B300A59E51 /* FontViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8295B2A222DB6B300A59E51 /* FontViewController.xib */; };
 		A8295B31222DB7EB00A59E51 /* FontCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8295B2F222DB7EB00A59E51 /* FontCell.swift */; };
 		A8295B32222DB7EB00A59E51 /* FontCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8295B30222DB7EB00A59E51 /* FontCell.xib */; };
 		A82C8BD321ED19D90093212B /* Observable+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82C8BD221ED19D90093212B /* Observable+Decodable.swift */; };
@@ -34,6 +48,12 @@
 		A846F2E92262363100A3F9B2 /* ImageResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = A846F2E82262363100A3F9B2 /* ImageResources.swift */; };
 		A846F2ED2262614800A3F9B2 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A846F2EB2262614800A3F9B2 /* ContainerViewController.swift */; };
 		A846F2EE2262614800A3F9B2 /* ContainerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A846F2EC2262614800A3F9B2 /* ContainerViewController.xib */; };
+		A877FD4C228CF19D0098E767 /* ArabicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A877FD4B228CF19D0098E767 /* ArabicFont.swift */; };
+		A877FD4E228D00400098E767 /* TranslationFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A877FD4D228D00400098E767 /* TranslationFont.swift */; };
+		A877FD50228E03FB0098E767 /* SplashScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A877FD4F228E03FB0098E767 /* SplashScreen.xib */; };
+		A877FD58228E42460098E767 /* KFGQPCUthmanicHafs.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A877FD57228E42460098E767 /* KFGQPCUthmanicHafs.ttf */; };
+		A877FD5A228E42E40098E767 /* sura_names.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A877FD59228E42E40098E767 /* sura_names.ttf */; };
+		A877FD5C2292312A0098E767 /* me_quran_R3b.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A877FD5B229231290098E767 /* me_quran_R3b.ttf */; };
 		A8787AC221DF845C00E59C77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8787AC121DF845C00E59C77 /* AppDelegate.swift */; };
 		A8787AC421DF845C00E59C77 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8787AC321DF845C00E59C77 /* LanguagesViewController.swift */; };
 		A8787AC721DF845C00E59C77 /* LanguagesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8787AC521DF845C00E59C77 /* LanguagesViewController.storyboard */; };
@@ -56,7 +76,6 @@
 		A8A2731D220B6BF100A60C27 /* SQLiteSourceTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2731C220B6BF100A60C27 /* SQLiteSourceTypes.swift */; };
 		A8A27329220C4E5B00A60C27 /* TranslationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A27328220C4E5B00A60C27 /* TranslationTableViewCell.swift */; };
 		A8A2732B220C4E7200A60C27 /* TranslationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8A2732A220C4E7200A60C27 /* TranslationTableViewCell.xib */; };
-		A8A2732D220D673B00A60C27 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2732C220D673B00A60C27 /* Fonts.swift */; };
 		A8B2E17621F0C00F0058ED6A /* Ayat.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E17521F0C00F0058ED6A /* Ayat.swift */; };
 		A8B2E17821F0C02C0058ED6A /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E17721F0C02C0058ED6A /* Word.swift */; };
 		A8B2E17F21F658D80058ED6A /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E17E21F658D80058ED6A /* JSONDecoder.swift */; };
@@ -66,7 +85,7 @@
 		A8B2E18A21F692580058ED6A /* TranslationsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B2E18921F692580058ED6A /* TranslationsViewController.storyboard */; };
 		A8B2E18D21F692CD0058ED6A /* WordTranslationsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B2E18C21F692CD0058ED6A /* WordTranslationsViewController.storyboard */; };
 		A8B2E18F21F692D40058ED6A /* WordTranslationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E18E21F692D40058ED6A /* WordTranslationsViewController.swift */; };
-		A8B2E19121F69A990058ED6A /* SurasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E19021F69A990058ED6A /* SurasViewModel.swift */; };
+		A8B2E19121F69A990058ED6A /* ChaptersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E19021F69A990058ED6A /* ChaptersViewModel.swift */; };
 		A8B2E19521F79D510058ED6A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E19421F79D510058ED6A /* MainTabBarController.swift */; };
 		A8B2E19721F79D630058ED6A /* MainTabBarController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8B2E19621F79D630058ED6A /* MainTabBarController.storyboard */; };
 		A8B2E19B21F79ED70058ED6A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B2E19A21F79ED70058ED6A /* SettingsViewController.swift */; };
@@ -87,14 +106,14 @@
 		A8EA5F6221E91DE400474F17 /* DownloadViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F6121E91DE400474F17 /* DownloadViewController.storyboard */; };
 		A8EA5F6421E91DFA00474F17 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F6321E91DFA00474F17 /* DownloadViewController.swift */; };
 		A8EA5F6621E92FA400474F17 /* DownloadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F6521E92FA400474F17 /* DownloadViewModel.swift */; };
-		A8EA5F6C21EA35F300474F17 /* SurasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F6B21EA35F200474F17 /* SurasViewController.swift */; };
-		A8EA5F6E21EA35FF00474F17 /* SurasViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F6D21EA35FF00474F17 /* SurasViewController.storyboard */; };
+		A8EA5F6C21EA35F300474F17 /* ChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F6B21EA35F200474F17 /* ChaptersViewController.swift */; };
+		A8EA5F6E21EA35FF00474F17 /* ChaptersViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F6D21EA35FF00474F17 /* ChaptersViewController.storyboard */; };
 		A8EA5F7221EA3E1C00474F17 /* Sura.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F7121EA3E1C00474F17 /* Sura.swift */; };
 		A8EA5F7621EA9DCF00474F17 /* ChapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F7521EA9DCF00474F17 /* ChapterCell.swift */; };
 		A8EA5F7821EA9DE300474F17 /* ChapterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F7721EA9DE300474F17 /* ChapterCell.xib */; };
-		A8EA5F7B21EBAC4E00474F17 /* SuraDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F7A21EBAC4E00474F17 /* SuraDetailViewController.swift */; };
-		A8EA5F7D21EBAC5C00474F17 /* SuraDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F7C21EBAC5C00474F17 /* SuraDetailViewController.storyboard */; };
-		A8EA5F7F21EBAC7700474F17 /* SuraDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F7E21EBAC7700474F17 /* SuraDetailViewModel.swift */; };
+		A8EA5F7B21EBAC4E00474F17 /* SuraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F7A21EBAC4E00474F17 /* SuraViewController.swift */; };
+		A8EA5F7D21EBAC5C00474F17 /* SuraViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F7C21EBAC5C00474F17 /* SuraViewController.storyboard */; };
+		A8EA5F7F21EBAC7700474F17 /* SuraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F7E21EBAC7700474F17 /* SuraViewModel.swift */; };
 		A8EA5F8721EC032E00474F17 /* AyahCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F8621EC032E00474F17 /* AyahCell.swift */; };
 		A8EA5F8921EC033D00474F17 /* AyahCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8EA5F8821EC033D00474F17 /* AyahCell.xib */; };
 		A8EA5F8B21EC821B00474F17 /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EA5F8A21EC821B00474F17 /* Translation.swift */; };
@@ -105,12 +124,27 @@
 /* Begin PBXFileReference section */
 		51396DBBEE9087E256C88C41 /* Pods_QuranAcademy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuranAcademy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		600C998A32E4979A7C2FF589 /* Pods-QuranAcademy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuranAcademy.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuranAcademy/Pods-QuranAcademy.release.xcconfig"; sourceTree = "<group>"; };
-		A805958522288C4C00706075 /* KFGQPCUthmanicHafs.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KFGQPCUthmanicHafs.ttf; sourceTree = "<group>"; };
 		A805958622288C4C00706075 /* me_quran.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = me_quran.ttf; sourceTree = "<group>"; };
 		A805958722288C4D00706075 /* Proxima Nova Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Light.otf"; sourceTree = "<group>"; };
-		A805958822288C4D00706075 /* me_quran2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = me_quran2.ttf; sourceTree = "<group>"; };
 		A805959522288C8D00706075 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A81293BD21F9A449003AEAC4 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		A823B003227B591500F0F69F /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A823B005227C604C00F0F69F /* FontViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FontViewController.storyboard; sourceTree = "<group>"; };
+		A823B007227C8FC100F0F69F /* FontViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontViewPresenter.swift; sourceTree = "<group>"; };
+		A823B00A227C905300F0F69F /* FontSizeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeCell.swift; sourceTree = "<group>"; };
+		A823B00B227C905300F0F69F /* FontSizeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontSizeCell.xib; sourceTree = "<group>"; };
+		A823B010227C90CE00F0F69F /* SegmentedControlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlCell.swift; sourceTree = "<group>"; };
+		A823B011227C90CE00F0F69F /* SegmentedControlCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SegmentedControlCell.xib; sourceTree = "<group>"; };
+		A823B015227C919000F0F69F /* ExampleTextCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTextCell.swift; sourceTree = "<group>"; };
+		A823B016227C919000F0F69F /* ExampleTextCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExampleTextCell.xib; sourceTree = "<group>"; };
+		A823B019227C91C600F0F69F /* ExampleTextCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTextCellModel.swift; sourceTree = "<group>"; };
+		A823B01C227C91F900F0F69F /* ThemeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCell.swift; sourceTree = "<group>"; };
+		A823B01D227C91F900F0F69F /* ThemeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeCell.xib; sourceTree = "<group>"; };
+		A823B020227C923700F0F69F /* ThemeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeCellModel.swift; sourceTree = "<group>"; };
+		A823B022227C925500F0F69F /* SegmentedControlCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlCellModel.swift; sourceTree = "<group>"; };
+		A823B024227C926C00F0F69F /* FontCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCellModel.swift; sourceTree = "<group>"; };
+		A823B026227C928800F0F69F /* FontSizeCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeCellModel.swift; sourceTree = "<group>"; };
+		A823B028227C936D00F0F69F /* FontTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontTableViewManager.swift; sourceTree = "<group>"; };
 		A8295B17222C7CB200A59E51 /* String+TextSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+TextSize.swift"; sourceTree = "<group>"; };
 		A8295B1B222C85E300A59E51 /* TranslationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationCell.swift; sourceTree = "<group>"; };
 		A8295B1C222C85E300A59E51 /* TranslationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslationCell.xib; sourceTree = "<group>"; };
@@ -118,7 +152,6 @@
 		A8295B22222C8F8600A59E51 /* BasmalaHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasmalaHeader.xib; sourceTree = "<group>"; };
 		A8295B25222D28B900A59E51 /* Basmala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basmala.swift; sourceTree = "<group>"; };
 		A8295B29222DB6B300A59E51 /* FontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
-		A8295B2A222DB6B300A59E51 /* FontViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontViewController.xib; sourceTree = "<group>"; };
 		A8295B2F222DB7EB00A59E51 /* FontCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCell.swift; sourceTree = "<group>"; };
 		A8295B30222DB7EB00A59E51 /* FontCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCell.xib; sourceTree = "<group>"; };
 		A82C8BD221ED19D90093212B /* Observable+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Decodable.swift"; sourceTree = "<group>"; };
@@ -133,6 +166,12 @@
 		A846F2E82262363100A3F9B2 /* ImageResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResources.swift; sourceTree = "<group>"; };
 		A846F2EB2262614800A3F9B2 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		A846F2EC2262614800A3F9B2 /* ContainerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContainerViewController.xib; sourceTree = "<group>"; };
+		A877FD4B228CF19D0098E767 /* ArabicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArabicFont.swift; sourceTree = "<group>"; };
+		A877FD4D228D00400098E767 /* TranslationFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationFont.swift; sourceTree = "<group>"; };
+		A877FD4F228E03FB0098E767 /* SplashScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreen.xib; sourceTree = "<group>"; };
+		A877FD57228E42460098E767 /* KFGQPCUthmanicHafs.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = KFGQPCUthmanicHafs.ttf; sourceTree = "<group>"; };
+		A877FD59228E42E40098E767 /* sura_names.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sura_names.ttf; sourceTree = "<group>"; };
+		A877FD5B229231290098E767 /* me_quran_R3b.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = me_quran_R3b.ttf; sourceTree = "<group>"; };
 		A8787ABE21DF845C00E59C77 /* QuranAcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuranAcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8787AC121DF845C00E59C77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8787AC321DF845C00E59C77 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
@@ -156,7 +195,6 @@
 		A8A2731C220B6BF100A60C27 /* SQLiteSourceTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteSourceTypes.swift; sourceTree = "<group>"; };
 		A8A27328220C4E5B00A60C27 /* TranslationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationTableViewCell.swift; sourceTree = "<group>"; };
 		A8A2732A220C4E7200A60C27 /* TranslationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TranslationTableViewCell.xib; sourceTree = "<group>"; };
-		A8A2732C220D673B00A60C27 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		A8A273302214081500A60C27 /* SQLiteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteModel.swift; sourceTree = "<group>"; };
 		A8B2E17521F0C00F0058ED6A /* Ayat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ayat.swift; sourceTree = "<group>"; };
 		A8B2E17721F0C02C0058ED6A /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
@@ -167,7 +205,7 @@
 		A8B2E18921F692580058ED6A /* TranslationsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TranslationsViewController.storyboard; sourceTree = "<group>"; };
 		A8B2E18C21F692CD0058ED6A /* WordTranslationsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WordTranslationsViewController.storyboard; sourceTree = "<group>"; };
 		A8B2E18E21F692D40058ED6A /* WordTranslationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordTranslationsViewController.swift; sourceTree = "<group>"; };
-		A8B2E19021F69A990058ED6A /* SurasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurasViewModel.swift; sourceTree = "<group>"; };
+		A8B2E19021F69A990058ED6A /* ChaptersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersViewModel.swift; sourceTree = "<group>"; };
 		A8B2E19421F79D510058ED6A /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A8B2E19621F79D630058ED6A /* MainTabBarController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabBarController.storyboard; sourceTree = "<group>"; };
 		A8B2E19A21F79ED70058ED6A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -187,14 +225,14 @@
 		A8EA5F6121E91DE400474F17 /* DownloadViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DownloadViewController.storyboard; sourceTree = "<group>"; };
 		A8EA5F6321E91DFA00474F17 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		A8EA5F6521E92FA400474F17 /* DownloadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewModel.swift; sourceTree = "<group>"; };
-		A8EA5F6B21EA35F200474F17 /* SurasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurasViewController.swift; sourceTree = "<group>"; };
-		A8EA5F6D21EA35FF00474F17 /* SurasViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SurasViewController.storyboard; sourceTree = "<group>"; };
+		A8EA5F6B21EA35F200474F17 /* ChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersViewController.swift; sourceTree = "<group>"; };
+		A8EA5F6D21EA35FF00474F17 /* ChaptersViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChaptersViewController.storyboard; sourceTree = "<group>"; };
 		A8EA5F7121EA3E1C00474F17 /* Sura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sura.swift; sourceTree = "<group>"; };
 		A8EA5F7521EA9DCF00474F17 /* ChapterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterCell.swift; sourceTree = "<group>"; };
 		A8EA5F7721EA9DE300474F17 /* ChapterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChapterCell.xib; sourceTree = "<group>"; };
-		A8EA5F7A21EBAC4E00474F17 /* SuraDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraDetailViewController.swift; sourceTree = "<group>"; };
-		A8EA5F7C21EBAC5C00474F17 /* SuraDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuraDetailViewController.storyboard; sourceTree = "<group>"; };
-		A8EA5F7E21EBAC7700474F17 /* SuraDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraDetailViewModel.swift; sourceTree = "<group>"; };
+		A8EA5F7A21EBAC4E00474F17 /* SuraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraViewController.swift; sourceTree = "<group>"; };
+		A8EA5F7C21EBAC5C00474F17 /* SuraViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SuraViewController.storyboard; sourceTree = "<group>"; };
+		A8EA5F7E21EBAC7700474F17 /* SuraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuraViewModel.swift; sourceTree = "<group>"; };
 		A8EA5F8621EC032E00474F17 /* AyahCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyahCell.swift; sourceTree = "<group>"; };
 		A8EA5F8821EC033D00474F17 /* AyahCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AyahCell.xib; sourceTree = "<group>"; };
 		A8EA5F8A21EC821B00474F17 /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
@@ -221,6 +259,68 @@
 				600C998A32E4979A7C2FF589 /* Pods-QuranAcademy.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A823B002227B58F900F0F69F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A823B003227B591500F0F69F /* Theme.swift */,
+				A877FD4B228CF19D0098E767 /* ArabicFont.swift */,
+				A877FD4D228D00400098E767 /* TranslationFont.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A823B009227C903100F0F69F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A823B01B227C91DF00F0F69F /* Themes Cell */,
+				A823B014227C917200F0F69F /* ExampleText Cell */,
+				A823B00F227C90A900F0F69F /* Segmented Controll Cell */,
+				A8295B2E222DB7CA00A59E51 /* Font Cell */,
+				A823B00E227C905E00F0F69F /* FontSize Cell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A823B00E227C905E00F0F69F /* FontSize Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A823B026227C928800F0F69F /* FontSizeCellModel.swift */,
+				A823B00A227C905300F0F69F /* FontSizeCell.swift */,
+				A823B00B227C905300F0F69F /* FontSizeCell.xib */,
+			);
+			path = "FontSize Cell";
+			sourceTree = "<group>";
+		};
+		A823B00F227C90A900F0F69F /* Segmented Controll Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A823B022227C925500F0F69F /* SegmentedControlCellModel.swift */,
+				A823B010227C90CE00F0F69F /* SegmentedControlCell.swift */,
+				A823B011227C90CE00F0F69F /* SegmentedControlCell.xib */,
+			);
+			path = "Segmented Controll Cell";
+			sourceTree = "<group>";
+		};
+		A823B014227C917200F0F69F /* ExampleText Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A823B019227C91C600F0F69F /* ExampleTextCellModel.swift */,
+				A823B015227C919000F0F69F /* ExampleTextCell.swift */,
+				A823B016227C919000F0F69F /* ExampleTextCell.xib */,
+			);
+			path = "ExampleText Cell";
+			sourceTree = "<group>";
+		};
+		A823B01B227C91DF00F0F69F /* Themes Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A823B020227C923700F0F69F /* ThemeCellModel.swift */,
+				A823B01C227C91F900F0F69F /* ThemeCell.swift */,
+				A823B01D227C91F900F0F69F /* ThemeCell.xib */,
+			);
+			path = "Themes Cell";
 			sourceTree = "<group>";
 		};
 		A8295B19222C85B000A59E51 /* Ayah */ = {
@@ -253,20 +353,23 @@
 		A8295B2D222DB6BA00A59E51 /* Font View */ = {
 			isa = PBXGroup;
 			children = (
-				A8295B2E222DB7CA00A59E51 /* FontCell */,
+				A823B009227C903100F0F69F /* Cells */,
+				A823B007227C8FC100F0F69F /* FontViewPresenter.swift */,
+				A823B028227C936D00F0F69F /* FontTableViewManager.swift */,
 				A8295B29222DB6B300A59E51 /* FontViewController.swift */,
-				A8295B2A222DB6B300A59E51 /* FontViewController.xib */,
+				A823B005227C604C00F0F69F /* FontViewController.storyboard */,
 			);
 			path = "Font View";
 			sourceTree = "<group>";
 		};
-		A8295B2E222DB7CA00A59E51 /* FontCell */ = {
+		A8295B2E222DB7CA00A59E51 /* Font Cell */ = {
 			isa = PBXGroup;
 			children = (
+				A823B024227C926C00F0F69F /* FontCellModel.swift */,
 				A8295B2F222DB7EB00A59E51 /* FontCell.swift */,
 				A8295B30222DB7EB00A59E51 /* FontCell.xib */,
 			);
-			path = FontCell;
+			path = "Font Cell";
 			sourceTree = "<group>";
 		};
 		A835D7472235F395005D25CE /* View */ = {
@@ -322,6 +425,7 @@
 				A8787AC121DF845C00E59C77 /* AppDelegate.swift */,
 				A8787AC821DF845F00E59C77 /* Assets.xcassets */,
 				A846F2E5226235DE00A3F9B2 /* Resource */,
+				A823B002227B58F900F0F69F /* Core */,
 				A8787AD321DFCB2700E59C77 /* Network */,
 				A8787AD621DFCCA400E59C77 /* Utilities */,
 				A8EA5F8C21EC84A900474F17 /* SQLiteDatabase */,
@@ -346,7 +450,6 @@
 			children = (
 				A8787AD721DFCCB700E59C77 /* Constants.swift */,
 				A8EA5F4D21E6967500474F17 /* Preferences.swift */,
-				A8A2732C220D673B00A60C27 /* Fonts.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -357,6 +460,7 @@
 				A8BC68572237A5BD002BD699 /* Quran.db */,
 				A8A27320220B8E7600A60C27 /* Fonts */,
 				A805959522288C8D00706075 /* Info.plist */,
+				A877FD4F228E03FB0098E767 /* SplashScreen.xib */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -367,8 +471,8 @@
 				A89CB8E321DFE58A00FEB466 /* Container */,
 				A8EA5F6921E9459F00474F17 /* Intro */,
 				A8B2E19221F79D1A0058ED6A /* Tabbar */,
-				A8EA5F6A21EA35D600474F17 /* Suras */,
-				A8EA5F7921EBAC3600474F17 /* SuraDetail */,
+				A8EA5F6A21EA35D600474F17 /* Chapters */,
+				A8EA5F7921EBAC3600474F17 /* Sura */,
 				A8B2E19921F79E9E0058ED6A /* Bookmarks */,
 				A8B2E19821F79E960058ED6A /* Settings */,
 				A8EA5F5C21E8F17000474F17 /* Download */,
@@ -412,9 +516,10 @@
 		A8A27320220B8E7600A60C27 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				A805958522288C4C00706075 /* KFGQPCUthmanicHafs.ttf */,
+				A877FD5B229231290098E767 /* me_quran_R3b.ttf */,
+				A877FD59228E42E40098E767 /* sura_names.ttf */,
+				A877FD57228E42460098E767 /* KFGQPCUthmanicHafs.ttf */,
 				A805958622288C4C00706075 /* me_quran.ttf */,
-				A805958822288C4D00706075 /* me_quran2.ttf */,
 				A805958722288C4D00706075 /* Proxima Nova Light.otf */,
 			);
 			path = Fonts;
@@ -546,15 +651,15 @@
 			path = Intro/Intro;
 			sourceTree = "<group>";
 		};
-		A8EA5F6A21EA35D600474F17 /* Suras */ = {
+		A8EA5F6A21EA35D600474F17 /* Chapters */ = {
 			isa = PBXGroup;
 			children = (
 				A8EA5F7421EA9DBD00474F17 /* Cell */,
-				A8B2E19021F69A990058ED6A /* SurasViewModel.swift */,
-				A8EA5F6B21EA35F200474F17 /* SurasViewController.swift */,
-				A8EA5F6D21EA35FF00474F17 /* SurasViewController.storyboard */,
+				A8B2E19021F69A990058ED6A /* ChaptersViewModel.swift */,
+				A8EA5F6B21EA35F200474F17 /* ChaptersViewController.swift */,
+				A8EA5F6D21EA35FF00474F17 /* ChaptersViewController.storyboard */,
 			);
-			path = Suras;
+			path = Chapters;
 			sourceTree = "<group>";
 		};
 		A8EA5F7021EA3DF900474F17 /* Models */ = {
@@ -582,15 +687,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		A8EA5F7921EBAC3600474F17 /* SuraDetail */ = {
+		A8EA5F7921EBAC3600474F17 /* Sura */ = {
 			isa = PBXGroup;
 			children = (
 				A8EA5F8521EC026E00474F17 /* Cells */,
-				A8EA5F7E21EBAC7700474F17 /* SuraDetailViewModel.swift */,
-				A8EA5F7A21EBAC4E00474F17 /* SuraDetailViewController.swift */,
-				A8EA5F7C21EBAC5C00474F17 /* SuraDetailViewController.storyboard */,
+				A8EA5F7E21EBAC7700474F17 /* SuraViewModel.swift */,
+				A8EA5F7A21EBAC4E00474F17 /* SuraViewController.swift */,
+				A8EA5F7C21EBAC5C00474F17 /* SuraViewController.storyboard */,
 			);
-			path = SuraDetail;
+			path = Sura;
 			sourceTree = "<group>";
 		};
 		A8EA5F8521EC026E00474F17 /* Cells */ = {
@@ -684,29 +789,35 @@
 			files = (
 				A8B2E18421F670270058ED6A /* WelcomeViewController.storyboard in Resources */,
 				A8B2E19F21F7A0140058ED6A /* BookmarksViewController.storyboard in Resources */,
+				A823B018227C919000F0F69F /* ExampleTextCell.xib in Resources */,
 				A8B2E18A21F692580058ED6A /* TranslationsViewController.storyboard in Resources */,
 				A8B2E1B121F8E6690058ED6A /* SimpleCell.xib in Resources */,
-				A805958922288C4D00706075 /* KFGQPCUthmanicHafs.ttf in Resources */,
 				A8BC68582237A5BD002BD699 /* Quran.db in Resources */,
 				A8A2732B220C4E7200A60C27 /* TranslationTableViewCell.xib in Resources */,
 				A8B2E19721F79D630058ED6A /* MainTabBarController.storyboard in Resources */,
 				A8EA5F8921EC033D00474F17 /* AyahCell.xib in Resources */,
 				A8295B32222DB7EB00A59E51 /* FontCell.xib in Resources */,
+				A877FD5C2292312A0098E767 /* me_quran_R3b.ttf in Resources */,
 				A8B2E1A121F7A0400058ED6A /* SettingsViewController.storyboard in Resources */,
+				A823B00D227C905300F0F69F /* FontSizeCell.xib in Resources */,
+				A823B01F227C91F900F0F69F /* ThemeCell.xib in Resources */,
 				A8EA5F6221E91DE400474F17 /* DownloadViewController.storyboard in Resources */,
 				A835D74B2235F3B3005D25CE /* SimpleHeader.xib in Resources */,
+				A823B013227C90CE00F0F69F /* SegmentedControlCell.xib in Resources */,
 				A8295B1E222C85E300A59E51 /* TranslationCell.xib in Resources */,
 				A8EA5F7821EA9DE300474F17 /* ChapterCell.xib in Resources */,
 				A835D7462235F057005D25CE /* BasmalaHeader.xib in Resources */,
-				A805958C22288C4D00706075 /* me_quran2.ttf in Resources */,
+				A877FD5A228E42E40098E767 /* sura_names.ttf in Resources */,
 				A846F2EE2262614800A3F9B2 /* ContainerViewController.xib in Resources */,
-				A8295B2C222DB6B300A59E51 /* FontViewController.xib in Resources */,
 				A8787AC921DF845F00E59C77 /* Assets.xcassets in Resources */,
 				A805958B22288C4D00706075 /* Proxima Nova Light.otf in Resources */,
+				A877FD58228E42460098E767 /* KFGQPCUthmanicHafs.ttf in Resources */,
 				A805958A22288C4D00706075 /* me_quran.ttf in Resources */,
-				A8EA5F6E21EA35FF00474F17 /* SurasViewController.storyboard in Resources */,
+				A8EA5F6E21EA35FF00474F17 /* ChaptersViewController.storyboard in Resources */,
+				A823B006227C604C00F0F69F /* FontViewController.storyboard in Resources */,
+				A877FD50228E03FB0098E767 /* SplashScreen.xib in Resources */,
 				A8B2E18D21F692CD0058ED6A /* WordTranslationsViewController.storyboard in Resources */,
-				A8EA5F7D21EBAC5C00474F17 /* SuraDetailViewController.storyboard in Resources */,
+				A8EA5F7D21EBAC5C00474F17 /* SuraViewController.storyboard in Resources */,
 				A8787AC721DF845C00E59C77 /* LanguagesViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -774,17 +885,21 @@
 				A8787AD821DFCCB800E59C77 /* Constants.swift in Sources */,
 				A8DD838621FBEE8700899F49 /* SQLiteStorageProtocol.swift in Sources */,
 				A8787AC421DF845C00E59C77 /* LanguagesViewController.swift in Sources */,
+				A823B00C227C905300F0F69F /* FontSizeCell.swift in Sources */,
 				A8465DD722087AE0008C818B /* TranslationTable.swift in Sources */,
 				A81293BE21F9A449003AEAC4 /* Notifications.swift in Sources */,
 				A89CB90321DFFDEE00FEB466 /* Data+extension.swift in Sources */,
 				A8EA5F7621EA9DCF00474F17 /* ChapterCell.swift in Sources */,
 				A89CB8FD21DFF2C900FEB466 /* LanguagesViewModel.swift in Sources */,
+				A823B008227C8FC100F0F69F /* FontViewPresenter.swift in Sources */,
+				A823B029227C936D00F0F69F /* FontTableViewManager.swift in Sources */,
 				A8295B1D222C85E300A59E51 /* TranslationCell.swift in Sources */,
 				A8B2E18221F66E120058ED6A /* WelcomeViewController.swift in Sources */,
 				A8465DD522087AA0008C818B /* WordTranslationTable.swift in Sources */,
 				A8E31D112215CE530079E398 /* Font.swift in Sources */,
 				A8DD838B21FBF35A00899F49 /* FileManager.swift in Sources */,
-				A8EA5F6C21EA35F300474F17 /* SurasViewController.swift in Sources */,
+				A823B027227C928800F0F69F /* FontSizeCellModel.swift in Sources */,
+				A8EA5F6C21EA35F300474F17 /* ChaptersViewController.swift in Sources */,
 				A8295B23222C8F8600A59E51 /* BasmalaHeader.swift in Sources */,
 				A8A27316220A074200A60C27 /* TextHeight.swift in Sources */,
 				A89CB8F421DFEAD400FEB466 /* UIViewController.swift in Sources */,
@@ -800,42 +915,51 @@
 				A8EA5F8B21EC821B00474F17 /* Translation.swift in Sources */,
 				A89CB8EF21DFEAAF00FEB466 /* UIStoryboard.swift in Sources */,
 				A8A2731D220B6BF100A60C27 /* SQLiteSourceTypes.swift in Sources */,
+				A877FD4C228CF19D0098E767 /* ArabicFont.swift in Sources */,
 				A8295B18222C7CB200A59E51 /* String+TextSize.swift in Sources */,
 				A8EA5F6421E91DFA00474F17 /* DownloadViewController.swift in Sources */,
 				A89CB8FA21DFEFED00FEB466 /* ContainerViewModel.swift in Sources */,
 				A8EA5F8F21EC858B00474F17 /* WordTranslation.swift in Sources */,
+				A823B021227C923700F0F69F /* ThemeCellModel.swift in Sources */,
 				A835D7492235F3A6005D25CE /* SimpleHeader.swift in Sources */,
+				A823B012227C90CE00F0F69F /* SegmentedControlCell.swift in Sources */,
 				A89CB8DF21DFE08500FEB466 /* QuranEndpoint.swift in Sources */,
-				A8A2732D220D673B00A60C27 /* Fonts.swift in Sources */,
 				A8295B26222D28B900A59E51 /* Basmala.swift in Sources */,
 				A8787AC221DF845C00E59C77 /* AppDelegate.swift in Sources */,
 				A8295B2B222DB6B300A59E51 /* FontViewController.swift in Sources */,
 				A8B2E17F21F658D80058ED6A /* JSONDecoder.swift in Sources */,
 				A8465DD92208B274008C818B /* SuraTable.swift in Sources */,
+				A823B01E227C91F900F0F69F /* ThemeCell.swift in Sources */,
 				A89CB8EE21DFEAAF00FEB466 /* UITableView.swift in Sources */,
 				A89CB8F221DFEAAF00FEB466 /* UICollectionView.swift in Sources */,
 				A8E31D13221611E40079E398 /* SQLiteTableCreator.swift in Sources */,
+				A823B023227C925500F0F69F /* SegmentedControlCellModel.swift in Sources */,
+				A823B01A227C91C600F0F69F /* ExampleTextCellModel.swift in Sources */,
+				A877FD4E228D00400098E767 /* TranslationFont.swift in Sources */,
 				A8B2E19B21F79ED70058ED6A /* SettingsViewController.swift in Sources */,
+				A823B017227C919000F0F69F /* ExampleTextCell.swift in Sources */,
 				A8E31D1522161C5B0079E398 /* Tafsir.swift in Sources */,
 				A8B2E17821F0C02C0058ED6A /* Word.swift in Sources */,
 				A8EA5F8721EC032E00474F17 /* AyahCell.swift in Sources */,
-				A8EA5F7F21EBAC7700474F17 /* SuraDetailViewModel.swift in Sources */,
+				A8EA5F7F21EBAC7700474F17 /* SuraViewModel.swift in Sources */,
 				A89CB8F021DFEAAF00FEB466 /* UINavigationController+StatusBarStyle.swift in Sources */,
 				A8B2E19521F79D510058ED6A /* MainTabBarController.swift in Sources */,
 				A8295B31222DB7EB00A59E51 /* FontCell.swift in Sources */,
 				A8A27329220C4E5B00A60C27 /* TranslationTableViewCell.swift in Sources */,
-				A8B2E19121F69A990058ED6A /* SurasViewModel.swift in Sources */,
+				A8B2E19121F69A990058ED6A /* ChaptersViewModel.swift in Sources */,
 				A89CB8FF21DFF40300FEB466 /* NSObject+Rx.swift in Sources */,
 				A8EA5F6621E92FA400474F17 /* DownloadViewModel.swift in Sources */,
 				A8E31D172216223F0079E398 /* SQLiteModel.swift in Sources */,
 				A8B2E1AF21F8E5F00058ED6A /* SimpleCell.swift in Sources */,
+				A823B004227B591500F0F69F /* Theme.swift in Sources */,
 				A8B2E18F21F692D40058ED6A /* WordTranslationsViewController.swift in Sources */,
 				A82C8BD321ED19D90093212B /* Observable+Decodable.swift in Sources */,
 				A8B2E17621F0C00F0058ED6A /* Ayat.swift in Sources */,
+				A823B025227C926C00F0F69F /* FontCellModel.swift in Sources */,
 				A846F2E72262360300A3F9B2 /* LocalizableKeys.swift in Sources */,
 				A8EA5F7221EA3E1C00474F17 /* Sura.swift in Sources */,
 				A8B2E18821F691380058ED6A /* TranslationsViewController.swift in Sources */,
-				A8EA5F7B21EBAC4E00474F17 /* SuraDetailViewController.swift in Sources */,
+				A8EA5F7B21EBAC4E00474F17 /* SuraViewController.swift in Sources */,
 				A89CB90121DFF5B600FEB466 /* Language.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

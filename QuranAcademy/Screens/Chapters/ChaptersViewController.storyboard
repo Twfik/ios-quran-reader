@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Zk-f3-tuK">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Коран-->
+        <scene sceneID="pep-Um-Tn9">
+            <objects>
+                <viewController storyboardIdentifier="ChaptersViewController" automaticallyAdjustsScrollViewInsets="NO" id="7Zk-f3-tuK" customClass="ChaptersViewController" customModule="QuranAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DY7-k5-jbT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="O2e-G0-bFY">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.94117647058823528" blue="0.8666666666666667" alpha="0.30429687500000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="7IP-UR-3TM">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="7Zk-f3-tuK" id="t0N-hd-kPC"/>
+                                    <outlet property="delegate" destination="7Zk-f3-tuK" id="DrT-as-Pm4"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O2e-G0-bFY" firstAttribute="leading" secondItem="5X8-aF-goZ" secondAttribute="leading" id="7kc-Ye-gAm"/>
+                            <constraint firstItem="5X8-aF-goZ" firstAttribute="trailing" secondItem="O2e-G0-bFY" secondAttribute="trailing" id="IAt-nO-EKm"/>
+                            <constraint firstItem="O2e-G0-bFY" firstAttribute="top" secondItem="5X8-aF-goZ" secondAttribute="top" id="d5O-D5-ZgQ"/>
+                            <constraint firstItem="5X8-aF-goZ" firstAttribute="bottom" secondItem="O2e-G0-bFY" secondAttribute="bottom" id="xik-Xu-CmQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5X8-aF-goZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Коран" image="Surah" selectedImage="Surah Active" id="kZL-H8-fX0"/>
+                    <navigationItem key="navigationItem" title="Коран" id="wag-M0-qf8"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="O2e-G0-bFY" id="o5E-D6-pZV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f0s-Ek-h5p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="964" y="97.601199400299862"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Surah" width="26" height="26"/>
+        <image name="Surah Active" width="26" height="26"/>
+    </resources>
+</document>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Font View Controller-->
+        <scene sceneID="e6Q-oy-wzM">
+            <objects>
+                <viewController storyboardIdentifier="FontViewController" id="6Vj-KE-rh8" customClass="FontViewController" customModule="QuranAcademy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dpf-HC-l2L">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-Ph-k9T">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pVf-ii-k7w" firstAttribute="trailing" secondItem="R5E-Ph-k9T" secondAttribute="trailing" id="5cc-zF-gh9"/>
+                            <constraint firstItem="R5E-Ph-k9T" firstAttribute="top" secondItem="pVf-ii-k7w" secondAttribute="top" id="8gy-qP-lHf"/>
+                            <constraint firstItem="pVf-ii-k7w" firstAttribute="bottom" secondItem="R5E-Ph-k9T" secondAttribute="bottom" id="Qci-Ld-Qzd"/>
+                            <constraint firstItem="R5E-Ph-k9T" firstAttribute="leading" secondItem="pVf-ii-k7w" secondAttribute="leading" id="vRf-3m-7lI"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pVf-ii-k7w"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="R5E-Ph-k9T" id="Ku3-hg-aZv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8s-en-vhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-929" y="-321"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XuD-xQ-sNc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XuD-xQ-sNc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -232,16 +232,10 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3g3-XT-w6g">
                                                     <rect key="frame" x="15" y="0.0" width="326" height="43.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Выбор шрифта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7l-4V-DoF">
-                                                            <rect key="frame" x="0.0" y="11.5" width="119.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Оформление" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H7l-4V-DoF">
+                                                            <rect key="frame" x="0.0" y="11.5" width="326" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usmani" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a0G-0G-HKm">
-                                                            <rect key="frame" x="268.5" y="11.5" width="57.5" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -298,10 +292,18 @@
                     <navigationItem key="navigationItem" title="Настройки" id="P4B-k9-mtz"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="languageLabel" destination="O0s-q4-AU9" id="FaG-L1-Sfz"/>
+                        <outlet property="aboutLabel" destination="b5c-FE-nNR" id="mj1-OL-VaO"/>
+                        <outlet property="interfaceLabel" destination="H7l-4V-DoF" id="rcq-uo-ptB"/>
+                        <outlet property="languageLabel" destination="7HR-p2-Tvb" id="wJq-RZ-3J1"/>
+                        <outlet property="readOnlyTasfirLabel" destination="w2S-KQ-27y" id="G3n-t6-HA7"/>
+                        <outlet property="showTranslationLabel" destination="jJU-Qb-aGX" id="ubf-G0-2bg"/>
+                        <outlet property="surasLanguageLabel" destination="7HR-p2-Tvb" id="MQZ-4U-m4F"/>
+                        <outlet property="tafsirLabel" destination="3hh-i2-0uN" id="hPt-qP-7Kx"/>
                         <outlet property="tafsirSwitch" destination="DeP-7v-FDQ" id="drQ-jH-ELd"/>
                         <outlet property="translationAuthorLabel" destination="6Z3-Ih-JET" id="3VP-hg-NES"/>
                         <outlet property="translationSwitch" destination="3vy-MW-4bd" id="iTs-ht-pAk"/>
+                        <outlet property="translationsLabel" destination="lpS-Od-gG4" id="UfJ-3u-M8e"/>
+                        <outlet property="wordTranslationLabe" destination="7ZO-iZ-o2s" id="b4p-Wy-JZh"/>
                         <outlet property="wordTranslationLabel" destination="604-J5-VjN" id="pc2-fj-nUo"/>
                     </connections>
                 </tableViewController>
